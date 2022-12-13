@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="es" id="oracle-cc" data-bind="setContextVariable:{name:&#39;masterViewModel&#39;, value:$data}" dir="ltr"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  
+
+  
+  <script type="text/javascript">
+    window.isPreviewMode = false ;
+    if (window.isPreviewMode === false ){
+      var bActiveX;
+      try {
+        new ActiveXObject('Microsoft.XMLHTTP');
+        bActiveX = true;
+      }
+      catch(e) { bActiveX = false; }
+      if (window.XMLHttpRequest || bActiveX) {
+        var xhttp = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHTTP');
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            window.endpointRegistry = xhttp.response ;
+          }
+        };
+        xhttp.open("GET", "/ccstoreui/v1/registry", true);
+        xhttp.responseType = 'json';
+        xhttp.setRequestHeader("X-CCProfileType", "storefrontUI");
+        xhttp.send();
+      }
+    }
+  </script>
+
+  
+  
+  <link rel="icon" href="https://www.portalserviciosestudiantes.uniandes.edu.co/file/v383201086760181483/general/favicon.ico">
+  
+
+  
+  
+  
+  
+  
+  
+  <script type="text/javascript">
+    if (self === top) {
+      var antiClickjack = document.getElementById("antiClickjack");
+      antiClickjack.parentNode.removeChild(antiClickjack);
+    } else {
+      top.location = self.location;
+    }
+  </script>
+  
+  
+  
+  <script type="text/javascript">
+    window.urlLocale = '';
+  </script>
+
+  
+
+  <script type="text/javascript">
+    window.siteBaseURLPath = '/';
+    window.applicationContextPath =  '';
+    window.siteId = 'siteUS';
+    window.siteIdOnURL = '';
+    window.clientConfigData = {
+                                'loadOjDependentBindings': 'false' ,
+                               
+                                'delayBeforeLoadingOutOfFocusImages': '-1' ,
+                               
+                                'includeOrderDetailsInShippingMethodsPayload': 'false' ,
+                               
+                                'loadImagesLazily': 'false' ,
+                               
+                                'skipLoadingProductTypes': 'true' ,
+                               
+                                'createOrderForLoggedInAtCheckout': 'false' ,
+                               
+                                'allowVirtualShippingGroup': 'false' ,
+                               
+                                'prioritizedLoading': 'true' ,
+                               
+                                'useEnhancedSearch': 'false' 
+                                };
+  </script>
+
+  
+  <script type="text/javascript">
+    window.externalServiceData = { social: { scheme: 'https', host: 'social-prod-us.occa.ocs.oraclecloud.com', port: '0' } };
+  </script>
+
+  <script type="text/javascript">
+    window.visitorId = '';
+    window.visitId = '';
+  </script>
+
+  
+  
+  
+
+
+<title data-bind="text: $data.title">Universidad de Los Andes</title>
+  <!-- ko noIndexMeta: noindex() --><!-- /ko -->
+  <!-- ko if: $data.description --><!-- /ko -->
+  <!-- ko if: ((typeof($data.keywords) === "function") && ($data.keywords() && $data.keywords().length > 0)) --><!-- /ko -->
+  <!-- ko foreach: $data.metaTags --><!-- /ko -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    
+    <link href="./Universidad de Los Andes_files/style.css" rel="stylesheet" type="text/css">
+
+    
+
+    <link href="./Universidad de Los Andes_files/base.css" rel="stylesheet" type="text/css"><link href="./Universidad de Los Andes_files/common.css" rel="stylesheet" type="text/css">
+
+    <!--[if lte IE 9]>
+    <link href="/css/storefront-ie.css?bust=22.3.4" rel="stylesheet" type="text/css"/>
+
+    <![endif]-->
+
+  
+
+  
+  
+    
+      <link href="./Universidad de Los Andes_files/css" rel="stylesheet" type="text/css">
+    
+  
+
+  
+
+  <!-- ko if: $data.prevPageNo --><!-- /ko -->
+  <!-- ko if: $data.nextPageNo --><!-- /ko -->
+
+  <!-- ko foreach: $data.alternates --><!-- /ko -->
+
+  
+  
+
+  <script type="text/javascript">
+      function getSamlResponse() {
+        return "PHNhbWxwOlJlc3BvbnNlIHhtbG5zOnNhbWxwPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6cHJvdG9jb2wiIHhtbG5zOmRzaWc9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvMDkveG1sZHNpZyMiIHhtbG5zOmVuYz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS8wNC94bWxlbmMjIiB4bWxuczpzYW1sPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YXNzZXJ0aW9uIiB4bWxuczp4NTAwPSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6cHJvZmlsZXM6YXR0cmlidXRlOlg1MDAiIHhtbG5zOnhzaT0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEtaW5zdGFuY2UiIERlc3RpbmF0aW9uPSJodHRwczovL3d3dy5wb3J0YWxzZXJ2aWNpb3Nlc3R1ZGlhbnRlcy51bmlhbmRlcy5lZHUuY28vU0FNTC9wb3N0IiBJRD0iaWQtWDZmNXFKVkxrZFhPU2laNjRFMGUta1hrbmlnLSIgSW5SZXNwb25zZVRvPSJPQ0NTXzQ5MzYzYjA2LWU0MmEtNDE3Ni04NDIwLWU1NTdjZTJkN2MzNSIgSXNzdWVJbnN0YW50PSIyMDIyLTEyLTEzVDEyOjM1OjQ4WiIgVmVyc2lvbj0iMi4wIj48c2FtbDpJc3N1ZXIgRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6bmFtZWlkLWZvcm1hdDplbnRpdHkiPmh0dHBzOi8vaWRjcy0yMjY2NjM2MWI1YjA0NDcyYmM3MTFmOWJjYTFmZGNkYy5pZGVudGl0eS5vcmFjbGVjbG91ZC5jb206NDQzL2ZlZDwvc2FtbDpJc3N1ZXI+PGRzaWc6U2lnbmF0dXJlPjxkc2lnOlNpZ25lZEluZm8+PGRzaWc6Q2Fub25pY2FsaXphdGlvbk1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyIvPjxkc2lnOlNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiLz48ZHNpZzpSZWZlcmVuY2UgVVJJPSIjaWQtWDZmNXFKVkxrZFhPU2laNjRFMGUta1hrbmlnLSI+PGRzaWc6VHJhbnNmb3Jtcz48ZHNpZzpUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwLzA5L3htbGRzaWcjZW52ZWxvcGVkLXNpZ25hdHVyZSIvPjxkc2lnOlRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyIvPjwvZHNpZzpUcmFuc2Zvcm1zPjxkc2lnOkRpZ2VzdE1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZW5jI3NoYTI1NiIvPjxkc2lnOkRpZ2VzdFZhbHVlPkdoOVJNejdwVVd1QjJ5WTMxVDdkOStHZ3dwamkycVF2NDd2cmFhM0o5RVU9PC9kc2lnOkRpZ2VzdFZhbHVlPjwvZHNpZzpSZWZlcmVuY2U+PC9kc2lnOlNpZ25lZEluZm8+PGRzaWc6U2lnbmF0dXJlVmFsdWU+dEloRWJkcitDYnBzM0FRam9weVYxdEs2ZjNwS2ZsNTJSSmY5WEdOQ3BQMWg5SzZDa3dkN2tMWVY0aXFwUU5LZgp0MElnbGJGSHZkY0F6L3lWaGxXMytUV01Xdy91ajlKQjNNYUx2djZuN0VGT1ZOdTFtTWEydllaVk1WWkpUZzVYCmlsMS9ZK0ZjZlVVWklpYUNjWXdKVDJFQzlEYXc5VFJsVGpPSWxzR0Y3VVBGUnYrbm5hMGNPRVk1cUxxMHgrZEwKL2xFd25BaS96WVlvb3o0UHNXTGNBK25YZDdyYUtsaWFtNUtHTDBPNXVxSGNiWTlyU1NwcFlMcVprQURsWjZLQgo3cWlHT2s2NUd3SnNXK3g2d1RxVnl3K21sQVpZNCtLUkhiRmJnb281dzFIYW01WXF4WE5lY1BDUGcxTC8xc2ppCi9qOWIyb1RXY2VzS0w0V0I2Nkx2Rmc9PTwvZHNpZzpTaWduYXR1cmVWYWx1ZT48L2RzaWc6U2lnbmF0dXJlPjxzYW1scDpTdGF0dXM+PHNhbWxwOlN0YXR1c0NvZGUgVmFsdWU9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDpzdGF0dXM6U3VjY2VzcyIvPjwvc2FtbHA6U3RhdHVzPjxzYW1sOkFzc2VydGlvbiBJRD0iaWQta011NVRkQ3Z6Uk5QU29URHRUc0VDbFRlcHBrLSIgSXNzdWVJbnN0YW50PSIyMDIyLTEyLTEzVDEyOjM1OjQ4WiIgVmVyc2lvbj0iMi4wIj48c2FtbDpJc3N1ZXIgRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6bmFtZWlkLWZvcm1hdDplbnRpdHkiPmh0dHBzOi8vaWRjcy0yMjY2NjM2MWI1YjA0NDcyYmM3MTFmOWJjYTFmZGNkYy5pZGVudGl0eS5vcmFjbGVjbG91ZC5jb206NDQzL2ZlZDwvc2FtbDpJc3N1ZXI+PGRzaWc6U2lnbmF0dXJlPjxkc2lnOlNpZ25lZEluZm8+PGRzaWc6Q2Fub25pY2FsaXphdGlvbk1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyIvPjxkc2lnOlNpZ25hdHVyZU1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZHNpZy1tb3JlI3JzYS1zaGEyNTYiLz48ZHNpZzpSZWZlcmVuY2UgVVJJPSIjaWQta011NVRkQ3Z6Uk5QU29URHRUc0VDbFRlcHBrLSI+PGRzaWc6VHJhbnNmb3Jtcz48ZHNpZzpUcmFuc2Zvcm0gQWxnb3JpdGhtPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwLzA5L3htbGRzaWcjZW52ZWxvcGVkLXNpZ25hdHVyZSIvPjxkc2lnOlRyYW5zZm9ybSBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMTAveG1sLWV4Yy1jMTRuIyIvPjwvZHNpZzpUcmFuc2Zvcm1zPjxkc2lnOkRpZ2VzdE1ldGhvZCBBbGdvcml0aG09Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvMDQveG1sZW5jI3NoYTI1NiIvPjxkc2lnOkRpZ2VzdFZhbHVlPldTRFBtV3ZtSkpQTkRXd0lCYjdaYm44MVh1V3ZETFA1R0JRekZjUXpmNGs9PC9kc2lnOkRpZ2VzdFZhbHVlPjwvZHNpZzpSZWZlcmVuY2U+PC9kc2lnOlNpZ25lZEluZm8+PGRzaWc6U2lnbmF0dXJlVmFsdWU+enJPdUQ2UU5BZ1kySGpUVHhob0ZsK0FMTDRJKzlvalYxQW9rSzNCZW5nZSs1WkdhR3B6U0FlLzdRVEtpcVhQdwpVRzZ2bnBieFBySmRRcEFoWHI3Mi9DbEg4Q3c1b1JDTGV0M25wNjZmaFlvUDFzNkttRFNsb01iVWNYNFFzSkVkCnkrOE5jdnJKMWxZTGxSYUdHZ0pLeG4rcEpBaVd4WGxBc1FGbFNFclBPLy9wYktWV253bzdVbkxSL21SQ3h0TlcKQ05PV3NnTGZZRTFNVWVzRUMvdW5WUUcycFZjajlkMkRYUnpYM2tENGZqN0hSWVpXUUM1NTlqeE85U3hjbTVoSAppV0NOQm41cmh6ODZoUDZUT0cxNHgwWUZPOG9GbFBkRG5jZE8xMGhLVFBvNytzVVNQamd5VzFtRlE4d29GU1l0CkgxcktOT2k3eUhWeVhHRXM3MThUU3c9PTwvZHNpZzpTaWduYXR1cmVWYWx1ZT48L2RzaWc6U2lnbmF0dXJlPjxzYW1sOlN1YmplY3Q+PHNhbWw6TmFtZUlEIEZvcm1hdD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOm5hbWVpZC1mb3JtYXQ6cGVyc2lzdGVudCIgTmFtZVF1YWxpZmllcj0iaHR0cHM6Ly9pZGNzLTIyNjY2MzYxYjViMDQ0NzJiYzcxMWY5YmNhMWZkY2RjLmlkZW50aXR5Lm9yYWNsZWNsb3VkLmNvbTo0NDMvZmVkIiBTUE5hbWVRdWFsaWZpZXI9Imh0dHBzOi8vd3d3LnBvcnRhbHNlcnZpY2lvc2VzdHVkaWFudGVzLnVuaWFuZGVzLmVkdS5jbyI+bWYucml2ZXJhcDFAdW5pYW5kZXMuZWR1LmNvPC9zYW1sOk5hbWVJRD48c2FtbDpTdWJqZWN0Q29uZmlybWF0aW9uIE1ldGhvZD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmNtOmJlYXJlciI+PHNhbWw6U3ViamVjdENvbmZpcm1hdGlvbkRhdGEgSW5SZXNwb25zZVRvPSJPQ0NTXzQ5MzYzYjA2LWU0MmEtNDE3Ni04NDIwLWU1NTdjZTJkN2MzNSIgTm90T25PckFmdGVyPSIyMDIyLTEyLTEzVDEyOjQxOjE4WiIgUmVjaXBpZW50PSJodHRwczovL3d3dy5wb3J0YWxzZXJ2aWNpb3Nlc3R1ZGlhbnRlcy51bmlhbmRlcy5lZHUuY28vU0FNTC9wb3N0Ii8+PC9zYW1sOlN1YmplY3RDb25maXJtYXRpb24+PC9zYW1sOlN1YmplY3Q+PHNhbWw6Q29uZGl0aW9ucyBOb3RCZWZvcmU9IjIwMjItMTItMTNUMTI6MzU6MThaIiBOb3RPbk9yQWZ0ZXI9IjIwMjItMTItMTNUMTI6NDE6MThaIj48c2FtbDpBdWRpZW5jZVJlc3RyaWN0aW9uPjxzYW1sOkF1ZGllbmNlPmh0dHBzOi8vd3d3LnBvcnRhbHNlcnZpY2lvc2VzdHVkaWFudGVzLnVuaWFuZGVzLmVkdS5jbzwvc2FtbDpBdWRpZW5jZT48L3NhbWw6QXVkaWVuY2VSZXN0cmljdGlvbj48L3NhbWw6Q29uZGl0aW9ucz48c2FtbDpBdXRoblN0YXRlbWVudCBBdXRobkluc3RhbnQ9IjIwMjItMTItMTNUMTI6MzU6NDhaIiBTZXNzaW9uSW5kZXg9ImlkLS1JMTMiIFNlc3Npb25Ob3RPbk9yQWZ0ZXI9IjIwMjItMTItMTNUMjA6MzY6MTdaIj48c2FtbDpBdXRobkNvbnRleHQ+PHNhbWw6QXV0aG5Db250ZXh0Q2xhc3NSZWY+dXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmFjOmNsYXNzZXM6UGFzc3dvcmRQcm90ZWN0ZWRUcmFuc3BvcnQ8L3NhbWw6QXV0aG5Db250ZXh0Q2xhc3NSZWY+PC9zYW1sOkF1dGhuQ29udGV4dD48L3NhbWw6QXV0aG5TdGF0ZW1lbnQ+PHNhbWw6QXR0cmlidXRlU3RhdGVtZW50PjxzYW1sOkF0dHJpYnV0ZSBOYW1lPSJvcmFjbGU6Y2xvdWQ6aWRlbnRpdHk6ZG9tYWluIiBOYW1lRm9ybWF0PSJ1cm46b2FzaXM6bmFtZXM6dGM6U0FNTDoyLjA6YXR0cm5hbWUtZm9ybWF0OmJhc2ljIj48c2FtbDpBdHRyaWJ1dGVWYWx1ZSB4bWxuczp4cz0iaHR0cDovL3d3dy53My5vcmcvMjAwMS9YTUxTY2hlbWEiIHhzaTp0eXBlPSJ4czpzdHJpbmciPmlkY3MtMjI2NjYzNjFiNWIwNDQ3MmJjNzExZjliY2ExZmRjZGM8L3NhbWw6QXR0cmlidXRlVmFsdWU+PC9zYW1sOkF0dHJpYnV0ZT48c2FtbDpBdHRyaWJ1dGUgTmFtZT0ib3JhY2xlOmNsb3VkOmlkZW50aXR5OnNlc3Npb25pZCIgTmFtZUZvcm1hdD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmF0dHJuYW1lLWZvcm1hdDpiYXNpYyI+PHNhbWw6QXR0cmlidXRlVmFsdWUgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4c2k6dHlwZT0ieHM6c3RyaW5nIj5mMmU4ZjhiOWQzMDY0ZjBkODBlY2Y4MzU1NmRlNjc5OTozMDMwYjk8L3NhbWw6QXR0cmlidXRlVmFsdWU+PC9zYW1sOkF0dHJpYnV0ZT48c2FtbDpBdHRyaWJ1dGUgTmFtZT0ib3JhY2xlOmNsb3VkOmlkZW50aXR5OnRlbmFudCIgTmFtZUZvcm1hdD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmF0dHJuYW1lLWZvcm1hdDpiYXNpYyI+PHNhbWw6QXR0cmlidXRlVmFsdWUgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4c2k6dHlwZT0ieHM6c3RyaW5nIj5pZGNzLTIyNjY2MzYxYjViMDQ0NzJiYzcxMWY5YmNhMWZkY2RjPC9zYW1sOkF0dHJpYnV0ZVZhbHVlPjwvc2FtbDpBdHRyaWJ1dGU+PHNhbWw6QXR0cmlidXRlIE5hbWU9Im9yYWNsZTpjbG91ZDppZGVudGl0eTp1cmwiIE5hbWVGb3JtYXQ9InVybjpvYXNpczpuYW1lczp0YzpTQU1MOjIuMDphdHRybmFtZS1mb3JtYXQ6YmFzaWMiPjxzYW1sOkF0dHJpYnV0ZVZhbHVlIHhtbG5zOnhzPSJodHRwOi8vd3d3LnczLm9yZy8yMDAxL1hNTFNjaGVtYSIgeHNpOnR5cGU9InhzOnN0cmluZyI+aHR0cHM6Ly9pZGNzLTIyNjY2MzYxYjViMDQ0NzJiYzcxMWY5YmNhMWZkY2RjLmlkZW50aXR5Lm9yYWNsZWNsb3VkLmNvbTwvc2FtbDpBdHRyaWJ1dGVWYWx1ZT48L3NhbWw6QXR0cmlidXRlPjxzYW1sOkF0dHJpYnV0ZSBOYW1lPSJpZHBFbWFpbCIgTmFtZUZvcm1hdD0idXJuOm9hc2lzOm5hbWVzOnRjOlNBTUw6Mi4wOmF0dHJuYW1lLWZvcm1hdDpiYXNpYyI+PHNhbWw6QXR0cmlidXRlVmFsdWUgeG1sbnM6eHM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDEvWE1MU2NoZW1hIiB4c2k6dHlwZT0ieHM6c3RyaW5nIj5tZi5yaXZlcmFwMUB1bmlhbmRlcy5lZHUuY288L3NhbWw6QXR0cmlidXRlVmFsdWU+PC9zYW1sOkF0dHJpYnV0ZT48L3NhbWw6QXR0cmlidXRlU3RhdGVtZW50Pjwvc2FtbDpBc3NlcnRpb24+PC9zYW1scDpSZXNwb25zZT4=";
+      }
+  </script>
+  <script type="text/javascript">
+      function getAgentAuthToken() {
+        return "";
+     }
+  </script>
+  <script type="text/javascript">
+      function getAgentRedirectUrl() {
+        return "";
+     }
+     function getAgentOrganizationIdValue() {
+             return "";
+     }
+     function getAgentPriceListGroupValue() {
+       return "";
+     }
+  </script>
+
+  <script type="text/javascript">
+        function getRelayState() {
+          return "";
+        }
+  </script>
+  <script type="text/javascript">
+      function getOAuthToken() {
+        return "";
+     }
+      function getAdditionalFormData() {
+        var additionalFormDataJson = {
+          
+        };
+        return additionalFormDataJson;
+     }
+  </script>
+
+  
+
+<script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://www.portalserviciosestudiantes.uniandes.edu.co/file/v4167446774620300968/storeJS/22.3.4/store-libs.js" src="./Universidad de Los Andes_files/store-libs.js"></script><style type="text/css">
+@font-face {
+  font-weight: 400;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Book.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 500;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Medium.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 700;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Bold.woff2') format('woff2');
+}
+
+@font-face {
+  font-weight: 900;
+  font-style:  normal;
+  font-family: 'Circular-Loom';
+
+  src: url('chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/fonts/CircularXXWeb-Black.woff2') format('woff2');
+}</style><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/file/v2693866604866290541/global/OCS_APPJS_utils.min.js?bust=MjY5Mzg2NjYwNDg2NjI5MDU0MQ==" src="./Universidad de Los Andes_files/OCS_APPJS_utils.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/file/v8957408425102530989/global/OCS_DATA_utils.min.js?bust=LTg5NTc0MDg0MjUxMDI1MzA5ODk=" src="./Universidad de Los Andes_files/OCS_DATA_utils.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="/file/v8818579726234907671/global/OCS_ccCustomBinding.min.js?bust=LTg4MTg1Nzk3MjYyMzQ5MDc2NzE=" src="./Universidad de Los Andes_files/OCS_ccCustomBinding.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="ojtranslations/nls/es/ojtranslations" src="./Universidad de Los Andes_files/ojtranslations.js"></script><script type="text/javascript" src="./Universidad de Los Andes_files/JsBarcode.all.min.js"></script><style type="text/css" id="-48190069">#OCS_infoTips_v1-wi300012 .list-info{letter-spacing:-0.4px;color:#000;list-style:none;margin-left:-15px;margin-bottom:20px;display:flex}#OCS_infoTips_v1-wi300012 .list-info:after{position:absolute;left:25px;content:"\00A1";color:#fff;background-color:#000;padding:0;border-radius:4px;height:16px;width:16px;text-align:center;margin-left:-5px}#OCS_infoTips_v1-wi300012 .box-white{background-color:#fff;padding:20px;border-radius:8px;position:relative}#OCS_infoTips_v1-wi300012 .top-margin-widget{margin-top:100px}#OCS_infoTips_v1-wi300012 .fixed{position:fixed;top:190px;z-index:1;background-color:#fff;width:29%;max-width:355px}#OCS_infoTips_v1-wi300012 .btn-info-tips{-webkit-box-align:center;align-items:center;border-radius:200px;bottom:0;display:block;height:45px;-webkit-box-pack:center;justify-content:center;margin:0;outline:none;padding:0;position:relative;z-index:999;background-color:#ff0;border:none;color:#000;cursor:pointer;min-width:45px;position:fixed;margin-bottom:10px;right:0;opacity:.5;font-size:25px}#OCS_infoTips_v1-wi300012 .btn-info-tips:hover{opacity:1;font-weight:bold} #OCS_accountDetails_v1-wi300015 .label-input{display:inline-block;margin-bottom:5px;font-weight:bold;color:#626262;font-size:12px}#OCS_accountDetails_v1-wi300015 .text-error-method{margin-top:20px;font-weight:bold;color:#f00;font-size:16px} #OCS_headerUniandes_v11-wi300001 .dropdown{position:relative;margin-left:10px}#OCS_headerUniandes_v11-wi300001 .modal-body-addr{position:relative;padding:20px;display:grid}#OCS_headerUniandes_v11-wi300001 .marg-btn{margin:5px}#OCS_headerUniandes_v11-wi300001 .menu-margin{margin-left:0 !important}#OCS_headerUniandes_v11-wi300001 .sub-menu-login{text-align:center}#OCS_headerUniandes_v11-wi300001 .btn-mobile-user{font-size:25px;text-align:center;font-weight:bold;background-color:#fff000;color:#000;padding:15px;text-decoration:none}#OCS_headerUniandes_v11-wi300001 .dropdown>.dropdown-menu{transition:.3s all ease-in-out;border-radius:8px;padding:10px}@media (max-width:768px){#OCS_headerUniandes_v11-wi300001 .dropdown>.dropdown-menu{margin-left:-150px;top:32px}}#OCS_headerUniandes_v11-wi300001 .item-menu{display:block;text-align:left;margin-bottom:10px;margin-left:10px}#OCS_headerUniandes_v11-wi300001 .btn-avatar-user{color:#000;font-size:30px;margin-left:10px;position:absolute;right:0}#OCS_headerUniandes_v11-wi300001 .navbar-default{background-color:#fff200}#OCS_headerUniandes_v11-wi300001 .navbar-default .navbar-nav>li>a{color:#000}@media (max-width:768px){#OCS_headerUniandes_v11-wi300001 .navbar-default .navbar-nav>li>a{font-size:25px;text-align:center;font-weight:bold}}#OCS_headerUniandes_v11-wi300001 .navbar-nav>li>.dropdown-menu{margin-top:0;border-top-left-radius:0;border-top-right-radius:0;border-radius:8px}@media (max-width:768px){#OCS_headerUniandes_v11-wi300001 .navbar-nav>li>.dropdown-menu{text-align:center}}#OCS_headerUniandes_v11-wi300001 .btn-dark{color:#fff;background-color:#000;margin:16px 0;border-radius:8px;padding:10px 20px;font-size:1.1rem;line-height:1.2em}#OCS_headerUniandes_v11-wi300001 .title-portal{margin:14px 0 14px 10px;padding:9px 14px;font-size:.9rem;line-height:1.1em;border-left:1px solid #000;max-width:100px;float:right}@media (max-width:768px){#OCS_headerUniandes_v11-wi300001 .title-portal{position:absolute;margin-left:auto;margin-right:auto;left:30%;right:30%;text-align:center;padding:9px 0;border-left:0;max-width:150px}}#OCS_headerUniandes_v11-wi300001 .navbar-default .navbar-nav>.active>a,#OCS_headerUniandes_v11-wi300001 .navbar-default .navbar-nav>.active>a:hover,#OCS_headerUniandes_v11-wi300001 .navbar-default .navbar-nav>.active>a:focus{color:#000;background-color:transparent;text-decoration:underline}#OCS_headerUniandes_v11-wi300001 .navbar-default .navbar-nav>.open>a,#OCS_headerUniandes_v11-wi300001 .navbar-default .navbar-nav>.open>a:hover,#OCS_headerUniandes_v11-wi300001 .navbar-default .navbar-nav>.open>a:focus{color:#000;background-color:transparent;text-decoration:underline}#OCS_headerUniandes_v11-wi300001 .navbar-default .navbar-toggle:hover,#OCS_headerUniandes_v11-wi300001 .navbar-default .navbar-toggle:focus{background-color:transparent}#OCS_headerUniandes_v11-wi300001 .navbar-default .navbar-toggle{border-color:transparent}#OCS_headerUniandes_v11-wi300001 .navbar-btn{background-color:transparent;border:transparent;position:absolute}#OCS_headerUniandes_v11-wi300001 .logo{height:48px;overflow:hidden;position:relative;width:130px;float:left;margin:12px 28px}@media (max-width:768px){#OCS_headerUniandes_v11-wi300001 .logo{width:35px}}#OCS_headerUniandes_v11-wi300001 .logo img{position:absolute;left:0;bottom:0;top:auto;transition:.3s}#OCS_headerUniandes_v11-wi300001 .avatar-mobile{float:right;margin-right:30px;margin-top:15px;font-size:28px}#OCS_headerUniandes_v11-wi300001 .menu-toggle{height:30px;position:relative;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);-webkit-transition:.5s ease-in-out;-moz-transition:.5s ease-in-out;-o-transition:.5s ease-in-out;transition:.5s ease-in-out;cursor:pointer;width:40px}#OCS_headerUniandes_v11-wi300001 .menu-toggle:hover{color:#000}#OCS_headerUniandes_v11-wi300001 .menu-toggle i,#OCS_headerUniandes_v11-wi300001 .menu-toggle i:after,#OCS_headerUniandes_v11-wi300001 .menu-toggle i:before{display:block;position:absolute;height:3px;width:30px;right:0;background:#000;border-radius:2px;-webkit-transform:rotate(0deg);-moz-transform:rotate(0deg);-o-transform:rotate(0deg);transform:rotate(0deg);-webkit-transition:.25s ease-in-out;-moz-transition:.25s ease-in-out;-o-transition:.25s ease-in-out;transition:.25s ease-in-out}#OCS_headerUniandes_v11-wi300001 .menu-toggle i:after,#OCS_headerUniandes_v11-wi300001 .menu-toggle i:before{content:''}#OCS_headerUniandes_v11-wi300001 .menu-toggle i:after{top:-10px}#OCS_headerUniandes_v11-wi300001 .menu-toggle i:before{top:-20px}#OCS_headerUniandes_v11-wi300001 .menu-toggle i{top:20px}#OCS_headerUniandes_v11-wi300001 .menu-toggle.open i:after{-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);-o-transform:rotate(45deg);transform:rotate(45deg);top:-22px}#OCS_headerUniandes_v11-wi300001 .menu-toggle.open i:before{-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);-o-transform:rotate(-45deg);transform:rotate(-45deg);top:-22px}#OCS_headerUniandes_v11-wi300001 .margin-menu{margin-left:auto;margin-right:7%;margin-top:15px}@media (min-width:992px){#OCS_headerUniandes_v11-wi300001 .margin-menu{margin-left:auto;margin-right:15%;margin-top:15px}#OCS_headerUniandes_v11-wi300001 .logo{margin:12px 0}}@media (min-width:768px){#OCS_headerUniandes_v11-wi300001 .avatar-user{padding-right:10px}#OCS_headerUniandes_v11-wi300001 .navbar-collapse.collapse{display:flex !important;height:auto !important;padding-bottom:0;overflow:visible !important}#OCS_headerUniandes_v11-wi300001 .navbar-nav.navbar-right:last-child{margin-right:10px;margin-top:15px}}#OCS_headerUniandes_v11-wi300001 .btn-dropdown-user{margin-top:15px;background-color:transparent;border:0} #OCS_footer_v1-wi300002{background-color:#181818}#OCS_footer_v1-wi300002 .OCS_footer{min-height:220px;background-color:#181818;color:#ccc;line-height:2;padding-bottom:40px;padding:40px 30px}#OCS_footer_v1-wi300002 .img-footer{height:48px;overflow:hidden}#OCS_footer_v1-wi300002 .legal-text{background:#121212;padding:40px 20px}#OCS_footer_v1-wi300002 .legal-txt{display:table-cell;vertical-align:middle;width:48%}#OCS_footer_v1-wi300002 .legal-text p{color:#818181;margin:0;font-size:.6rem;line-height:1.2}#OCS_footer_v1-wi300002 .copy-right{text-align:right}#OCS_footer_v1-wi300002 .title-footer{border-bottom:solid 1px;text-align:center;border-color:#ff0;padding-bottom:15px}#OCS_footer_v1-wi300002 .content-row-footer{text-align:center}#OCS_footer_v1-wi300002 .icon-footer-social{font-size:30px;margin-right:10px;text-decoration:none} #OCS_preHeader_v1-wi300003 .container-preheader{background:#1e1e1e}#OCS_preHeader_v1-wi300003 .btn-top-header{float:left;padding:12px 34px;background:#2c2c2c;font-size:.9rem;line-height:1.1em;text-decoration:none}#OCS_preHeader_v1-wi300003 .menu-top-header{list-style:none;float:right;margin-bottom:0}#OCS_preHeader_v1-wi300003 .menu-top-header .btn-menu-top-header{padding:3px 12px;margin:9px 0;border-right:1px solid #fff;float:left}#OCS_preHeader_v1-wi300003 .menu-top-header .btn-menu-top-header a{font-size:.9rem;line-height:1.1em;text-decoration:none}#OCS_preHeader_v1-wi300003 .menu-top-header .btn-menu-top-header-last{border:0}#OCS_preHeader_v1-wi300003 .phone-link{margin-left:30px}#OCS_preHeader_v1-wi300003 .phone-icon{color:#fff;font-size:1.7em;position:absolute;top:8px;margin-right:5px}#OCS_preHeader_v1-wi300003 .language-dropdown{float:right;position:relative}#OCS_preHeader_v1-wi300003 .language-dropdown:hover .content-languages{visibility:visible;opacity:1}#OCS_preHeader_v1-wi300003 .language-dropdown .heading-languages{padding:12px 0 12px 12px;margin:0}#OCS_preHeader_v1-wi300003 .language-dropdown .heading-languages a{text-decoration:none}#OCS_preHeader_v1-wi300003 .language-dropdown .heading-languages a span{font-size:.9rem;line-height:1.1em}#OCS_preHeader_v1-wi300003 .language-dropdown .content-languages{position:absolute;right:0;top:100%;width:100px;visibility:hidden;opacity:0;transition:.3s;z-index:1000}#OCS_preHeader_v1-wi300003 .language-dropdown .content-languages ul{list-style:none;background:#2c2c2c;margin:0;padding:0}#OCS_preHeader_v1-wi300003 .language-dropdown .content-languages ul li a{font-size:.9rem;line-height:1.1em;text-decoration:none;padding:8px 12px;display:block} </style><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="//experiments-prod-us.occa.ocs.oraclecloud.com/EEAdmin/js/ee/js/atgsvcs-test.js" src="./Universidad de Los Andes_files/atgsvcs-test.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="//experiments-prod-us.occa.ocs.oraclecloud.com/EEAdmin/js/ee/js/cc-metrics-1.0.js" src="./Universidad de Los Andes_files/cc-metrics-1.0.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="momentLangs/es" src="./Universidad de Los Andes_files/es.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://www.portalserviciosestudiantes.uniandes.edu.co/file/v1254835275896826683/widget/v2/notifications/js/notifications-widget.min.js" src="./Universidad de Los Andes_files/notifications-widget.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://www.portalserviciosestudiantes.uniandes.edu.co/file/v2482271296863021398/widget/OCS_preHeader/js/OCS_preHeader.min.js" src="./Universidad de Los Andes_files/OCS_preHeader.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://www.portalserviciosestudiantes.uniandes.edu.co/file/v1783888455907951764/widget/v11/OCS_headerUniandes/js/OCS_headerUniandes.min.js" src="./Universidad de Los Andes_files/OCS_headerUniandes.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://www.portalserviciosestudiantes.uniandes.edu.co/file/v2483142038074577373/widget/OCS_accountDetails/js/OCS_accountDetails.min.js" src="./Universidad de Los Andes_files/OCS_accountDetails.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://www.portalserviciosestudiantes.uniandes.edu.co/file/v4395612357898675200/widget/OCS_editAddressBook/js/OCS_editAddressBook.min.js" src="./Universidad de Los Andes_files/OCS_editAddressBook.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://www.portalserviciosestudiantes.uniandes.edu.co/file/v4933852015289843468/widget/OCS_infoTips/js/OCS_infoTips.min.js" src="./Universidad de Los Andes_files/OCS_infoTips.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://www.portalserviciosestudiantes.uniandes.edu.co/file/v5791350464418568129/widget/OCS_footer/js/OCS_footer.min.js" src="./Universidad de Los Andes_files/OCS_footer.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://www.portalserviciosestudiantes.uniandes.edu.co/file/v6312956983749136117/widget/recommendationsTracking/js/recsTracking.min.js" src="./Universidad de Los Andes_files/recsTracking.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://visit-prod-us.occa.ocs.oraclecloud.com/Visit/js/oracleunifiedvisit.js" src="./Universidad de Los Andes_files/oracleunifiedvisit.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://www.portalserviciosestudiantes.uniandes.edu.co/file/v9080620603328175187/widget/recommendationsTracking/js/recsRequest.min.js" src="./Universidad de Los Andes_files/recsRequest.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://www.portalserviciosestudiantes.uniandes.edu.co/file/v147600203412215771/widget/recommendationsTracking/js/gdprConsent.min.js" src="./Universidad de Los Andes_files/gdprConsent.min.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="https://www.portalserviciosestudiantes.uniandes.edu.co/file/v1403316650006343266/widget/v11/OCS_headerUniandes/element/login-sso-element/js/element.min.js" src="./Universidad de Los Andes_files/element.min.js"></script></head>
+<body data-new-gr-c-s-check-loaded="14.1088.0" data-gr-ext-installed=""><noscript>
+</noscript>
+
+
+  
+
+
+<!-- ko agentBar: isObo() --><!-- /ko -->
+<div id="alert-page-change" class="sr-only" role="alert" aria-atomic="true" aria-live="polite" data-bind="text: pageChangeMessage">Se ha cargado pa100003.</div>
+<div id="alert-modal-change" class="sr-only" role="alert" aria-atomic="true" aria-live="polite"></div>
+<div id="page" data-bind="css:{&#39;container&#39;: containPage}" class="container">
+  <header id="headerBar" class="page-row">
+
+    <div data-bind="css:{&#39;container&#39;: containHeader}">
+      <!-- ko foreach: headerRows -->
+      <div class="row">
+        <div data-bind="template: { name: &#39;region-template&#39;, foreach: regions }" class="redBox">
+  <!-- ko if: $data.hasOwnProperty('structure') && $data.structure() == 101 --><!-- /ko -->
+  <!-- ko ifnot: $data.hasOwnProperty('structure') && $data.structure() == 101 -->
+  <!-- ko if: $data.widgets() && $data.widgets().length && !$data.globalWidgetsOnly() -->
+  <div data-bind="css: widthClass, attr: {id: &#39;region-&#39;+name()}" class="col-sm-12" id="region-re200011">
+    <!-- ko foreach: $data.widgets  -->
+    <!-- ko ifnot: global  -->
+    <!-- ko if: initialized  -->
+    <!-- ko if: $data.elementsSrc -->
+    <!-- ko addTemplate: elementsSrc() --><!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if: isPreview --><!-- /ko -->
+    <!-- ko ifnot: $data.templateSrc --><!-- /ko -->
+    <!-- ko if: $data.templateSrc -->
+    <div data-bind="template: {name: templateUrl(),templateSrc: templateSrc()}, attr: {id: typeId()+&quot;-&quot;+id()}, visible:($masterViewModel.storeConfiguration.enablePrioritizedLoading) ? (occPrioritizedDisplay ? occPrioritizedDisplay : true):true" id="notifications_v2-notificationsInst" style=""><div id="cc-notifications" data-oc-id="cc-notifications">
+  <!-- oc layout: panels -->
+  <div id="cc-notifications-panel" data-oc-id="cc-notifications-panel">
+    <!-- oc section: notifications-message-box -->
+      <div data-bind="element: &#39;notifications-message-box&#39;" id="notificationsInst-notifications-message-box-id">
+<div id="messageBox" class="cc-message-box">
+  <!-- Message Panel -->
+  <!-- ko with: messageBox -->
+  <div id="CC-messages" data-bind="slide: messageFlag" role="alert" style="display: none;"></div>
+  <!-- /ko -->
+  <!-- Message Panel -->
+</div>
+</div>
+    <!-- /oc -->
+  </div>
+  <!-- /oc -->
+</div></div>
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+    
+    <!-- ko ifnot: global  -->
+    <!-- ko if: initialized  -->
+    <!-- ko if: $data.elementsSrc -->
+    <!-- ko addTemplate: elementsSrc() --><!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if: isPreview --><!-- /ko -->
+    <!-- ko ifnot: $data.templateSrc --><!-- /ko -->
+    <!-- ko if: $data.templateSrc -->
+    <div data-bind="template: {name: templateUrl(),templateSrc: templateSrc()}, attr: {id: typeId()+&quot;-&quot;+id()}, visible:($masterViewModel.storeConfiguration.enablePrioritizedLoading) ? (occPrioritizedDisplay ? occPrioritizedDisplay : true):true" id="OCS_preHeader_v1-wi300003" style=""><div id="divId" class="hidden-xs hidden-md visible-lg container-preheader" data-bind="visible: true">
+    <div class="container">
+        <a class="btn-top-header" href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile">Volver al sitio institucional</a>
+        <div class="pull-right">
+            <!-- oc section: preheader-language-picker -->
+            <!-- <div class="language-dropdown" data-bind="element: 'preheader-language-picker'"></div> -->
+            <!-- /oc -->
+            <ul class="menu-top-header">
+                <li class="btn-menu-top-header">
+                    <a href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile">Inquietudes</a>
+                </li>
+                <li class="btn-menu-top-header btn-menu-top-header-last">
+                    <i class="fa fa-phone phone-icon"></i>
+                    <a class="phone-link" href="tel:+5713324404">PBX + (571) 332 44 04</a>
+                </li>
+            </ul>
+        </div>
+
+
+
+    </div>
+
+</div></div>
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+    
+    <!-- ko ifnot: global  -->
+    <!-- ko if: initialized  -->
+    <!-- ko if: $data.elementsSrc -->
+    <!-- ko addTemplate: elementsSrc() --><!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if: isPreview --><!-- /ko -->
+    <!-- ko ifnot: $data.templateSrc --><!-- /ko -->
+    <!-- ko if: $data.templateSrc -->
+    <div data-bind="template: {name: templateUrl(),templateSrc: templateSrc()}, attr: {id: typeId()+&quot;-&quot;+id()}, visible:($masterViewModel.storeConfiguration.enablePrioritizedLoading) ? (occPrioritizedDisplay ? occPrioritizedDisplay : true):true" id="OCS_headerUniandes_v11-wi300001" style=""><!-- ko if: loaded -->
+<nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+        <div class="navbar-header">
+
+            <!-- <div class="avatar-mobile visible-xs hidden-sm hidden-md hidden-lg" data-bind="element: 'login-sso-element'"></div> -->
+
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar" data-bind="click: $data.displayMenu.bind($data)">
+            <div class="menu-toggle">
+              <i></i>
+            </div>
+          </button>
+            <a class="logo navbar-btn" title="Home" data-bind="ccLink: {route: &#39;/home&#39;}" href="https://www.portalserviciosestudiantes.uniandes.edu.co/home">
+                <img title="Logo Uniandes" src="./Universidad de Los Andes_files/logo-header_0_0.png" alt="Home" class="logo-oscuro">
+            </a>
+            <div class="title-portal">Portal de Matrículas</div>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse" aria-expanded="true">
+            <ul class="nav navbar-nav margin-menu">
+                <li><a data-bind="ccLink: { route: &#39;/home&#39;}" href="https://www.portalserviciosestudiantes.uniandes.edu.co/home">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Servicios</a>
+                    <ul class="dropdown-menu menu-margin">
+                        <li><a data-bind="ccLink: {route: &#39;/liquidaciondematricula/product/liquidacionDeMatricula&#39;}" href="https://www.portalserviciosestudiantes.uniandes.edu.co/liquidaciondematricula/product/liquidacionDeMatricula">Pago de Matrícula</a></li>
+                        <li><a data-bind="ccLink: {route: &#39;/pago-de-cartera/product/PagoDeCartera&#39;}" href="https://www.portalserviciosestudiantes.uniandes.edu.co/pago-de-cartera/product/PagoDeCartera">Pago de Obligaciones en Cartera</a></li>
+                        <li><a data-bind="ccLink: {route: &#39;/historial-certificados&#39;}" href="https://www.portalserviciosestudiantes.uniandes.edu.co/historial-certificados">Historial y Certificados de Pago</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Ayuda</a>
+                    <ul class="dropdown-menu menu-margin">
+                        <li><a href="https://servicioscompartidos.uniandes.edu.co/index.php/estudiantes/devoluciones">Devolución de Pago de Matrícula</a></li>
+                        <li><a href="https://apoyofinanciero.uniandes.edu.co/index.php/comites/comite-de-matriculas">Comité de Matrículas</a></li>
+                        <li><a href="https://servicioscompartidos.uniandes.edu.co/index.php/estudiantes/facturacion-matricula-asumida">Matrícula Asumida</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="true">Información </a>
+                    <ul class="dropdown-menu menu-margin">
+                        <li><a href="https://matriculas.uniandes.edu.co/">Información Importante</a></li>
+                    </ul>
+                </li>
+                <li class="visible-xs hidden-sm hidden-md hidden-lg" data-bind="element: &#39;login-sso-element&#39;" id="wi300001-login-sso-element-id">
+<!-- ko if: initialized() && $data.elements.hasOwnProperty('login-registration') -->
+  <div>
+    <!-- ko with: user -->
+      <!-- ko if: readyToDisplay -->
+        <div class="text-right cc-welcome">
+          <div data-bind="visible: loggedInUserName() &amp;&amp; (loggedIn() || isUserSessionExpired()) ">
+            
+            <div class="dropdown">
+              <button class="visible-lg visible-md visible-sm hidden-xs dropdown-toggle btn-dropdown-user" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <strong><span data-bind="widgetLocaleText : {value:&#39;welcome&#39;, attr:&#39;innerText&#39;, params: {userName: $parent.nameStudent()}}" class="cc-header-firstName">Bienvenido Manuel Fernando</span></strong>
+              </button>
+
+              <a href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile#CC-headermodalpane" class="visible-xs hidden-sm hidden-md hidden-lg btn-mobile-user dropdown-toggle" id="CC-loginHeader-avatar" data-original-title="menu user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span data-bind="widgetLocaleText : {value:&#39;welcome&#39;, attr:&#39;innerText&#39;, params: {userName: $parent.nameStudent()}}" class="cc-header-firstName">Bienvenido Manuel Fernando</span></a>
+              
+
+              <ul class="dropdown-menu menu-margin sub-menu-login" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" id="CC-loginHeader-myAccount" data-original-title="myAccount" data-bind="widgetLocaleText: {attr: &#39;innerText&#39;, value: &#39;myAccount&#39;}, click: validatePrivilagePageRequest, ccNavigation: &#39;prevent&#39;, ccLink: &#39;profile&#39;" href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile">Mi cuenta</a></li>
+                <li><a class="dropdown-item" id="CC-loginHeader-logout" data-original-title="logout" data-bind="widgetLocaleText: {attr: &#39;innerText&#39;, value: &#39;logoutLinkText&#39;}, click: $parent[&#39;elements&#39;][&#39;login-registration&#39;].handleLogout.bind($parent)" href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile#">Desconexión</a></li>
+              </ul>
+
+
+            </div>
+            
+          </div>
+          <div data-bind="visible: !(loggedInUserName() &amp;&amp; (loggedIn() || isUserSessionExpired()))" style="display: none;">
+            <a href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile#CC-headermodalpane" class="hidden-xs hidden-sm visible-md visible-lg btn btn-dark" id="CC-loginHeader-login" data-original-title="login" data-bind="click:function(data, event) { $parent[&#39;elements&#39;][&#39;login-registration&#39;].handleSamlLogin.bind(data, $parent, event)() }, widgetLocaleText: {attr: &#39;innerText&#39;, value: &#39;loginLinkText&#39;}">Conexión</a>
+            
+            <a href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile#CC-headermodalpane" class="visible-xs hidden-sm hidden-md hidden-lg btn-mobile-user dropdown-toggle" id="CC-loginHeader-avatar"><span data-bind="click:function(data, event) { $parent[&#39;elements&#39;][&#39;login-registration&#39;].handleSamlLogin.bind(data, $parent, event)() }, widgetLocaleText: {attr: &#39;innerText&#39;, value: &#39;loginLinkText&#39;}" class="cc-header-firstName">Conexión</span></a>
+          </div>
+        </div>
+      <!-- /ko -->
+    <!-- /ko -->
+  </div>
+<!-- /ko -->
+
+</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <div class="hiden-xs visible-sm visible-md visible-lg btn-signIn" data-bind="element: &#39;login-sso-element&#39;" id="wi300001-login-sso-element-id">
+<!-- ko if: initialized() && $data.elements.hasOwnProperty('login-registration') -->
+  <div>
+    <!-- ko with: user -->
+      <!-- ko if: readyToDisplay -->
+        <div class="text-right cc-welcome">
+          <div data-bind="visible: loggedInUserName() &amp;&amp; (loggedIn() || isUserSessionExpired()) ">
+            
+            <div class="dropdown">
+              <button class="visible-lg visible-md visible-sm hidden-xs dropdown-toggle btn-dropdown-user" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <strong><span data-bind="widgetLocaleText : {value:&#39;welcome&#39;, attr:&#39;innerText&#39;, params: {userName: $parent.nameStudent()}}" class="cc-header-firstName">Bienvenido Manuel Fernando</span></strong>
+              </button>
+
+              <a href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile#CC-headermodalpane" class="visible-xs hidden-sm hidden-md hidden-lg btn-mobile-user dropdown-toggle" id="CC-loginHeader-avatar" data-original-title="menu user" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span data-bind="widgetLocaleText : {value:&#39;welcome&#39;, attr:&#39;innerText&#39;, params: {userName: $parent.nameStudent()}}" class="cc-header-firstName">Bienvenido Manuel Fernando</span></a>
+              
+
+              <ul class="dropdown-menu menu-margin sub-menu-login" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" id="CC-loginHeader-myAccount" data-original-title="myAccount" data-bind="widgetLocaleText: {attr: &#39;innerText&#39;, value: &#39;myAccount&#39;}, click: validatePrivilagePageRequest, ccNavigation: &#39;prevent&#39;, ccLink: &#39;profile&#39;" href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile">Mi cuenta</a></li>
+                <li><a class="dropdown-item" id="CC-loginHeader-logout" data-original-title="logout" data-bind="widgetLocaleText: {attr: &#39;innerText&#39;, value: &#39;logoutLinkText&#39;}, click: $parent[&#39;elements&#39;][&#39;login-registration&#39;].handleLogout.bind($parent)" href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile#">Desconexión</a></li>
+              </ul>
+
+
+            </div>
+            
+          </div>
+          <div data-bind="visible: !(loggedInUserName() &amp;&amp; (loggedIn() || isUserSessionExpired()))" style="display: none;">
+            <a href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile#CC-headermodalpane" class="hidden-xs hidden-sm visible-md visible-lg btn btn-dark" id="CC-loginHeader-login" data-original-title="login" data-bind="click:function(data, event) { $parent[&#39;elements&#39;][&#39;login-registration&#39;].handleSamlLogin.bind(data, $parent, event)() }, widgetLocaleText: {attr: &#39;innerText&#39;, value: &#39;loginLinkText&#39;}">Conexión</a>
+            
+            <a href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile#CC-headermodalpane" class="visible-xs hidden-sm hidden-md hidden-lg btn-mobile-user dropdown-toggle" id="CC-loginHeader-avatar"><span data-bind="click:function(data, event) { $parent[&#39;elements&#39;][&#39;login-registration&#39;].handleSamlLogin.bind(data, $parent, event)() }, widgetLocaleText: {attr: &#39;innerText&#39;, value: &#39;loginLinkText&#39;}" class="cc-header-firstName">Conexión</span></a>
+          </div>
+        </div>
+      <!-- /ko -->
+    <!-- /ko -->
+  </div>
+<!-- /ko -->
+
+</div>
+                    <!-- <div class="btn-signIn" data-bind="element: 'login-sso-element'"></div> -->
+                </li>
+            </ul>
+        </div>
+        <!--/.nav-collapse -->
+    </div>
+</nav>
+<!-- /ko -->
+<div id="errorUserData" class="modal fade in" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false">
+    <div class="modal-dialog cc-modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="content-title-address">
+                    <h3 class="h2-title-data">Debes verificar tus datos antes de continuar</h3>
+                </div>
+            </div>
+
+            <div class="modal-body-addr cc-modal-body">
+
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <span class="label-h2">¡Actualiza tus datos! Es un requisito importante para continuar con el proceso. Haz clic en “Continuar” y completa la información requerida. En caso de presentar algún inconveniente, comunícate al PBX +(571)3324404
+</span>
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <button class="btn btn-primary btn-update-data" data-dismiss="modal" data-bind="click: $data.closeModalUser.bind($data)">Continuar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Cookies -->
+<div id="enabledThirdPartyCookie" class="modal fade in" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-hidden="false">
+    <div class="modal-dialog cc-modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body-addr cc-modal-body">
+                <div class="form-row">
+                    <div class="form-group col-md-12">
+                        <span class="label-h2"><br><br>
+                        Asegúrate de permitir el uso de las cookies en tu navegador. Para aprender cómo hacerlo puedes ingresar <a href="https://knowledgebase.constantcontact.com/articles/KnowledgeBase/5908-habilitar-cookies-en-su-navegador-web?lang=es" target="_blank">aquí</a>
+                        <br>
+                        Te recomendamos borrar historial y cookies de tu navegador. Aprende cómo hacerlo <a href="https://knowledgebase.constantcontact.com/articles/KnowledgeBase/5604-borrar-cache-navegador-web?lang=es" target="_blank">aquí</a>
+                        <br>
+                        Utiliza los navegadores Chrome, Firefox o Edge.
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <button class="btn btn-primary btn-update-data" data-dismiss="modal" data-bind="click: $data.closeModalCookies.bind($data)">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div></div>
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+  </div>
+  <!-- /ko -->
+  <!-- /ko -->
+</div>
+      </div>
+      <!-- /ko -->
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="main" data-bind="css:{&#39;container&#39;: containMain}">
+      <!-- ko foreach: bodyRows -->
+      <div class="row">
+        <div data-bind="template: { name: &#39;region-template&#39;, foreach: regions }" class="redBox">
+  <!-- ko if: $data.hasOwnProperty('structure') && $data.structure() == 101 --><!-- /ko -->
+  <!-- ko ifnot: $data.hasOwnProperty('structure') && $data.structure() == 101 -->
+  <!-- ko if: $data.widgets() && $data.widgets().length && !$data.globalWidgetsOnly() -->
+  <div data-bind="css: widthClass, attr: {id: &#39;region-&#39;+name()}" class="col-sm-8" id="region-re200012">
+    <!-- ko foreach: $data.widgets  -->
+    <!-- ko ifnot: global  -->
+    <!-- ko if: initialized  -->
+    <!-- ko if: $data.elementsSrc --><!-- /ko -->
+    <!-- ko if: isPreview --><!-- /ko -->
+    <!-- ko ifnot: $data.templateSrc --><!-- /ko -->
+    <!-- ko if: $data.templateSrc -->
+    <div data-bind="template: {name: templateUrl(),templateSrc: templateSrc()}, attr: {id: typeId()+&quot;-&quot;+id()}, visible:($masterViewModel.storeConfiguration.enablePrioritizedLoading) ? (occPrioritizedDisplay ? occPrioritizedDisplay : true):true" id="13-wi300015" style=""><!-- ko if: loaded -->
+<!-- ko if: (user().loggedIn() || user().isUserSessionExpired()) -->
+<div class="progress-header">
+  <span>Consulta</span>
+  <h1 class="h1-title">Confirma tu pago</h1>
+  <h2 class="h2-title">Valor $2.162.160</h2>
+      <div class="form-group col-md-12">
+        <button class="btn btn-primary btn-update-data" data-dismiss="modal" data-bind="enable: $data.dateExpIDMask() &amp;&amp; $data.codStudent(), click: handleUpdateProfile">Confirmar</button>
+      </div>
+
+
+    </div>
+</div>
+<!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+    
+    <!-- ko ifnot: global  -->
+    <!-- ko if: initialized  -->
+    <!-- ko if: $data.elementsSrc --><!-- /ko -->
+    <!-- ko if: isPreview --><!-- /ko -->
+    <!-- ko ifnot: $data.templateSrc -->
+    <!-- ko if: templateUrl() -->
+    <div data-bind="template: {name: templateUrl(), templateUrl: &quot;&quot;}, attr: {id: typeId()+&quot;-&quot;+id()}, visible:($masterViewModel.storeConfiguration.enablePrioritizedLoading) ? (occPrioritizedDisplay ? occPrioritizedDisplay : true):true" id="OCS_editAddressBook_v1-wi400004" style=""></div>
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if: $data.templateSrc --><!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+  </div>
+  <!-- /ko -->
+  <!-- /ko -->
+
+  <!-- ko if: $data.hasOwnProperty('structure') && $data.structure() == 101 --><!-- /ko -->
+  <!-- ko ifnot: $data.hasOwnProperty('structure') && $data.structure() == 101 -->
+  <!-- ko if: $data.widgets() && $data.widgets().length && !$data.globalWidgetsOnly() -->
+  <div data-bind="css: widthClass, attr: {id: &#39;region-&#39;+name()}" class="col-sm-4" id="region-re200013">
+    <!-- ko foreach: $data.widgets  -->
+    <!-- ko ifnot: global  -->
+    <!-- ko if: initialized  -->
+    <!-- ko if: $data.elementsSrc --><!-- /ko -->
+    <!-- ko if: isPreview --><!-- /ko -->
+    <!-- ko ifnot: $data.templateSrc --><!-- /ko -->
+    <!-- ko if: $data.templateSrc -->
+    <div data-bind="template: {name: templateUrl(),templateSrc: templateSrc()}, attr: {id: typeId()+&quot;-&quot;+id()}, visible:($masterViewModel.storeConfiguration.enablePrioritizedLoading) ? (occPrioritizedDisplay ? occPrioritizedDisplay : true):true" id="OCS_infoTips_v1-wi300012" style=""><!-- ko if: $data.tipsVisible() -->
+<div id="infoTipsContainer" class="box-white hidden-xs top-margin-widget" data-bind="visible: $data.tipsVisible(), css: {&#39;top-margin-widget&#39;: $data.topMarginWidget()}">
+    <ul>
+        <!-- ko foreach: infoActive -->
+            <li class="list-info" data-bind="text: tips, visible: visible">Dudas, Inconvenientes y Sugerencias, PBX + (571) 332 44 04</li>
+        
+            <li class="list-info" data-bind="text: tips, visible: visible" style="display: none;"></li>
+        
+            <li class="list-info" data-bind="text: tips, visible: visible" style="display: none;"></li>
+        <!-- /ko -->
+    </ul>
+</div>
+<!-- /ko -->
+
+<button class="btn-info-tips visible-xs hidden-sm hidden-md hidden-lg" data-toggle="modal" data-target="#modalInfo">?</button>
+
+
+<div id="modalInfo" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false">
+    <div class="modal-dialog cc-modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="content-title-address">
+            Información de interes
+          </div>
+        </div>
+  
+        <div class="modal-body-addr cc-modal-body">
+          
+          <div class="form-row">
+            <div class="form-group col-md-12">
+                <ul>
+                    <!-- ko foreach: infoActive -->
+                        <li class="list-info" data-bind="text: tips, visible: visible">Dudas, Inconvenientes y Sugerencias, PBX + (571) 332 44 04</li>
+                    
+                        <li class="list-info" data-bind="text: tips, visible: visible" style="display: none;"></li>
+                    
+                        <li class="list-info" data-bind="text: tips, visible: visible" style="display: none;"></li>
+                    <!-- /ko -->
+                </ul>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+  </div>
+  <!-- /ko -->
+  <!-- /ko -->
+</div>
+      </div>
+      
+      <div class="row">
+        <div data-bind="template: { name: &#39;region-template&#39;, foreach: regions }" class="redBox">
+  <!-- ko if: $data.hasOwnProperty('structure') && $data.structure() == 101 --><!-- /ko -->
+  <!-- ko ifnot: $data.hasOwnProperty('structure') && $data.structure() == 101 -->
+  <!-- ko if: $data.widgets() && $data.widgets().length && !$data.globalWidgetsOnly() --><!-- /ko -->
+  <!-- /ko -->
+</div>
+      </div>
+      <!-- /ko -->
+    </div>
+
+    <div id="loadingModal" class="loadingIndicator hide" style="display: block;"></div>
+  </main>
+
+  <footer id="footerBar" class="page-row">
+    <div data-bind="css:{&#39;container&#39;: containFooter}">
+      <!-- ko foreach: footerRows -->
+      <div class="row">
+        <div data-bind="template: { name: &#39;region-template&#39;, foreach: regions }" class="redBox">
+  <!-- ko if: $data.hasOwnProperty('structure') && $data.structure() == 101 --><!-- /ko -->
+  <!-- ko ifnot: $data.hasOwnProperty('structure') && $data.structure() == 101 -->
+  <!-- ko if: $data.widgets() && $data.widgets().length && !$data.globalWidgetsOnly() -->
+  <div data-bind="css: widthClass, attr: {id: &#39;region-&#39;+name()}" class="col-sm-12" id="region-re200014">
+    <!-- ko foreach: $data.widgets  -->
+    <!-- ko ifnot: global  -->
+    <!-- ko if: initialized  -->
+    <!-- ko if: $data.elementsSrc --><!-- /ko -->
+    <!-- ko if: isPreview --><!-- /ko -->
+    <!-- ko ifnot: $data.templateSrc --><!-- /ko -->
+    <!-- ko if: $data.templateSrc -->
+    <div data-bind="template: {name: templateUrl(),templateSrc: templateSrc()}, attr: {id: typeId()+&quot;-&quot;+id()}, visible:($masterViewModel.storeConfiguration.enablePrioritizedLoading) ? (occPrioritizedDisplay ? occPrioritizedDisplay : true):true" id="OCS_footer_v1-wi300002" style=""><footer class="OCS_footer container" id="footerUniandes">
+    <div class="row">
+        <div class="col-md-3 col-sm-3 col-xs-12 ">
+            <article class="item-footer contact-info">
+                <figure class="img-footer">
+                  <img src="./Universidad de Los Andes_files/logo-header_0_0.png" alt="Universidad de los Andes - Logo">
+                </figure>
+                
+              </article>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 content-row-footer">
+            <h4 class="title-footer">Enlaces rápidos</h4>
+            <a href="https://apoyofinanciero.uniandes.edu.co/" target="_blank">Apoyo financiero</a>
+            <br>
+            <a href="https://registro.uniandes.edu.co/" target="_blank">Admisiones y Registro</a>
+            <br>
+            <hr class="divisor visible-xs">
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 content-row-footer">
+          <h4 class="title-footer">Canales de atención</h4>
+
+            <a href="tel: +5713324404" target="_blank">PBX +(571) 332 44 04</a>
+            <br>
+            <a href="https://www.portalserviciosestudiantes.uniandes.edu.co/profile#" target="_blank">CAI - Calle 18ª 0-33 Bloque E <br>
+                lunes a viernes 8am a 5pm</a>
+            <hr class="divisor visible-xs">
+      </div>
+        <div class="col-md-3 col-sm-3 col-xs-12 content-row-footer">
+            <div class="wrapper-social top-margin-mobile">
+                <h4 class="title-footer">Redes Sociales</h4>
+                <a href="https://www.instagram.com/uniandes" class="icon-footer-social" target="_blank">
+                    <i class="fa fa-instagram"></i>
+                </a>
+                
+                <a href="https://twitter.com/Uniandes" class="icon-footer-social" target="_blank">
+                    <i class="fa fa-twitter-square"></i>
+                </a>
+                
+                <a href="https://www.facebook.com/UniandesCol" class="icon-footer-social" target="_blank">
+                    <i class="fa fa-facebook-square"></i>
+                </a>                
+            </div>
+            <hr class="divisor visible-xs">
+        </div>
+    </div>
+</footer>
+<div class="row legal-text">
+    <div class="container">
+        <article class="legal-txt">
+          <p>Universidad de los Andes | Vigilada Mineducación</p>
+          <p>Reconocimiento como Universidad: Decreto 1297 del 30 de mayo de 1964.</p>
+          <p>Reconocimiento personería jurídica: Resolución 28 del 23 de febrero de 1949 Minjusticia.</p>
+        </article>
+        <article class="copy-right">
+          <p>© - Derechos Reservados Universidad de los Andes</p>
+        </article>
+    </div>
+</div></div>
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+    <!-- /ko -->
+  </div>
+  <!-- /ko -->
+  <!-- /ko -->
+</div>
+      </div>
+      <!-- /ko -->
+    </div>
+  </footer>
+</div>
+
+<script type="text/html" id="region-template"></script>
+
+<script type="text/html" id="stack-template">
+  <!-- ko if: $masterViewModel.isPreview -->
+  <div class="sf-display-error">
+    <span class="sf-error-title" data-bind="text: $root.displayErrorMessage"></span>:
+    <span class="sf-error-msg"></span>
+  </div>
+  <!-- /ko -->
+  <!-- ko ifnot: templateSrc -->
+  <!-- ko if: templatePath() -->
+  <div data-bind='template: {name: templatePath(), templateUrl: ""}, attr: {id: stackType()+"-"+id()}'
+       class="stack-template "></div>
+  <!-- /ko -->
+  <!-- /ko -->
+  <!-- ko if: templateSrc -->
+  <div data-bind='template: {name: name(), templateSrc: templateSrc()}, attr: {id: stackType()+"-"+id()}'
+       class="stack-template "></div>
+  <!-- /ko -->
+</script>
+
+<!-- this template is loaded on site load and is available then onwards even if internet connection has some issue -->
+<script type="text/html" id="notificationsNetworkError">
+  <span data-bind="text: networkErrorMessage"></span>
+  <u><a data-bind="text: networkErrorReloadText" href="javascript:location.reload(true);"></a></u>
+</script>
+
+
+
+
+  <script type="text/javascript">
+    window.storeLibsPath= 'https://www.portalserviciosestudiantes.uniandes.edu.co/file/v4167446774620300968/storeJS/22.3.4/store-libs.js';
+    window.ccKoOjExtensionsPath= 'https://www.portalserviciosestudiantes.uniandes.edu.co/file/v1010939044921284163/storeJS/22.3.4/cc-ko-oj-extensions.js';
+  </script>
+  <script type="text/javascript">var require = {
+ "config": {
+  "ccNavState": {
+   "referrer": "/",
+   "statusCode": "200"
+  },
+  "ccResourceLoader": {"jsUrls": [
+   "/file/v2693866604866290541/global/OCS_APPJS_utils.min.js?bust=MjY5Mzg2NjYwNDg2NjI5MDU0MQ==",
+   "/file/v8957408425102530989/global/OCS_DATA_utils.min.js?bust=LTg5NTc0MDg0MjUxMDI1MzA5ODk=",
+   "/file/v8818579726234907671/global/OCS_ccCustomBinding.min.js?bust=LTg4MTg1Nzk3MjYyMzQ5MDc2NzE="
+  ]},
+  "pageLayout/css-loader": {"optimizingCSS": true}
+ },
+ "urlArgs": "bust=22.3.4",
+ "waitSeconds": 45
+};</script><script src="./Universidad de Los Andes_files/require.js"></script>
+
+  <script src="./Universidad de Los Andes_files/main.js"></script>
+
+  <script src="./Universidad de Los Andes_files/store-libs.js"></script>
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="chrome-extension://liecbddmkiiihnedobmlmillhodjkdmb/css/blur.css" class="loom-blur-styles"><script type="text/html" id="OCS_preHeader_v1-add-to-purchase-list">
+<!-- ko if: $data.initialized() && $data.elements.hasOwnProperty('purchase-list') -->
+  <div class="btn-group swm-add-to-wishlist-selector add-space-to-purchase-list">
+    <!-- ko if:$data.quickViewFromPurchaseList !== undefined -->
+      <!-- ko if:!$data.quickViewFromPurchaseList() -->
+        <button id="cc-prodDetailsAddToPurchaseListSelector" data-backdrop="static" data-bind="disabled: {condition: $data.isAddToPurchaseListDisabled && $data.isAddToPurchaseListDisabled()}, widgetLocaleText:'productAddToPurchaseListText'" class="btn cc-button-secondary">
+        </button>
+        <!-- ko if: $data.user().loggedIn() -->
+	    <button id="cc-prodDetailsAddToPurchaseListDropdown" class="btn cc-button-secondary dropdown-toggle" data-backdrop="static" data-toggle="dropdown"
+	     data-bind="disabled: {condition: $data.isAddToPurchaseListDisabled && $data.isAddToPurchaseListDisabled()}, click: $data.elements['purchase-list'].openAddToPurchaseListDropDownSelector.bind($parent),visible:{condition: $data.quickViewFromPurchaseList !== undefined ? !$data.quickViewFromPurchaseList(): true}">
+	     <span class="caret"></span>
+	     <span class="sr-only" data-bind="widgetLocaleText:'productAddToPurchaseListText'"></span>
+	    </button>
+	    <!-- /ko -->
+      <!-- /ko -->
+      <!-- ko if:$data.quickViewFromPurchaseList() -->
+        <button id="cc-prodDetailsAddToPurchaseList" data-backdrop="static" data-dismiss="modal" data-bind="disabled:{condition:!validateAddToCart(),click:$data.elements['purchase-list'].addItemToGivenPurchaseList.bind($data)}, widgetLocaleText:'productAddToPurchaseListText'" class="cc-button-secondary">
+        </button>
+      <!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if:$data.quickViewFromPurchaseList == undefined -->
+      <button id="cc-prodDetailsAddToPurchaseListSelector" data-backdrop="static" data-bind="disabled: {condition: $data.isAddToPurchaseListDisabled && $data.isAddToPurchaseListDisabled()}, widgetLocaleText:'productAddToPurchaseListText'" class="btn cc-button-secondary">
+      </button>
+      <!-- ko if: $data.user().loggedIn() -->
+	  <button id="cc-prodDetailsAddToPurchaseListDropdown" class="btn cc-button-secondary dropdown-toggle" data-backdrop="static" data-toggle="dropdown"
+	    data-bind="disabled: {condition: $data.isAddToPurchaseListDisabled && $data.isAddToPurchaseListDisabled()}, click: $data.elements['purchase-list'].openAddToPurchaseListDropDownSelector.bind($parent),visible:{condition: $data.quickViewFromPurchaseList !== undefined ? !$data.quickViewFromPurchaseList(): true}">
+	    <span class="caret"></span>
+	    <span class="sr-only" data-bind="widgetLocaleText:'productAddToPurchaseListText'"></span>
+	  </button>
+    <!-- /ko -->
+    <!-- /ko -->
+	
+    <!-- ko if: $data.user().loggedIn() -->
+    <ul class="dropdown-menu cc-scrollable-menu" role="menu" aria-labelledby="cc-prodDetailsAddToPurchaseListDropdown">
+      <li role="presentation" class="dropdown-header" data-bind="widgetLocaleText: 'myPurchaseListText'"></li>
+      <!-- ko foreach : {data : $data.elements['purchase-list'].purchaseListArray, as : 'purchaseList'} -->
+       <li role="presentation">
+         <a role="menuitem" tabindex="-1" href="#" data-bind="text: purchaseList.purchaseListName,
+         click: $parent['elements']['purchase-list'].addItemToPurchaseList.bind($parent, purchaseList)"></a>
+       </li>
+      <!-- /ko -->
+      <li role="presentation" class="divider"></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-bind="widgetLocaleText: 'createNewPurchaseListText',
+        click: $parent['elements']['purchase-list'].addToNewPurchaseListClick.bind($parent)"></a></li>
+    </ul>
+    <!-- /ko -->
+  </div>
+<!-- /ko -->
+
+<div class="modal fade" id="CC-newPurchaseList-modal" tabindex="-1" role="alert">
+ <div class="modal-dialog" id="CC-newPurchaseList-modal-dialog">
+    <div class="modal-content" id="CC-newPurchaseListModalContent">
+      <div class="modal-header" id="CC-newPurchaseList-modal-header">
+        <button type="button" class="close" data-dismiss="modal" id="CC-newPurchaseList-modal-headerClose" aria-hidden="true">&times;</button>
+        <h4 data-bind="widgetLocaleText:'newPurchaseListModalTitle'" id="CC-newPurchaseList-modal-headerText"></h4>
+      </div>
+      <hr class="hr-without-margin">
+      <div class="modal-body" id="CC-newPurchaseList-modal-modalBody">
+        <div><span data-bind="widgetLocaleText:'listNameText'"></span></div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <span class="text-danger visible-xs" id="CC-purchaseListName"  role="alert"></span>
+            <div class="control">
+              <input id="CC-purchaseList-name" type="text" class="col-md-12 form-control" data-bind="widgetLocaleText: {attr: 'placeholder', value: 'purchaseListNameText'}"/>
+            </div>
+          </div>
+          <div class="text-danger col-md-4 cc-alert" id="cc-purchaseListName-error" role="alert">
+            <span data-bind="widgetLocaleText:'listNameMandatoryText'">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" id="CC-newPurchaseList-modal-footer">
+        <button class="btn cc-button-secondary" id="CC-newPurchaseList-modal-cancel" data-bind="click: $parent.handleModalNo">
+          <span id="CC-newPurchaseList-modal-discard" data-bind="widgetLocaleText:'purchaseListModalCancel'"></span>
+        </button>
+        <button class="btn cc-button-primary" id="CC-newPurchaseList-modal-submit" data-bind="click: $parent.handleModalYes">
+          <span id="CC-newPurchaseList-modal-save" data-bind="widgetLocaleText:'purchaseListModalCreateList'"></span>
+        </button>
+    </div>
+    </div>
+  </div>
+</div>
+</script><script type="text/html" id="OCS_preHeader_v1-generic-text">
+<span data-bind="widgetLocaleText:{custom: $elementInstance.textId, value: 'customTextNotFound', attr:'innerText'}"></span>
+
+</script><script type="text/html" id="OCS_preHeader_v1-image">
+<!-- ko with: $elementInstance -->
+  <!-- ko if: ($data.hasOwnProperty('config') && $data.id !== 'id') -->
+  <div class="cc-image" data-bind="style: {'text-align': config.horizontalAlignment.horizontalAlignment}">
+    <!-- ko if: (config.image.link && config.image.link !== '') -->
+    <a data-bind="attr: {href: config.image.link}">
+      <img data-bind="attr: {src: config.image.src, alt: config.image.altText, title: config.image.titleText}, style: {borderWidth: config.border.borderWidth + 'px', borderColor: config.border.borderColor, borderStyle: 'solid', paddingTop: config.padding.paddingTop + 'px', paddingBottom: config.padding.paddingBottom + 'px', paddingLeft: config.padding.paddingLeft + 'px', paddingRight: config.padding.paddingRight + 'px'}">
+    </a>
+    <!-- /ko -->
+    <!-- ko ifnot: (config.image.link && config.image.link !== '') -->
+      <img data-bind="attr: {src: config.image.src, alt: config.image.altText, title: config.image.titleText}, style: {borderWidth: config.border.borderWidth + 'px', borderColor: config.border.borderColor, borderStyle: 'solid', paddingTop: config.padding.paddingTop + 'px', paddingBottom: config.padding.paddingBottom + 'px', paddingLeft: config.padding.paddingLeft + 'px', paddingRight: config.padding.paddingRight + 'px'}">
+    <!-- /ko -->
+  </div>
+  <!-- /ko -->
+<!-- /ko -->
+
+</script><script type="text/html" id="OCS_preHeader_v1-preheader-language-picker">
+<!-- ko if: initialized() && $data.elements.hasOwnProperty('preheader-language-picker') -->
+<!-- ko with: $data['elements']['preheader-language-picker'] -->
+<div class="heading-languages">
+    <a data-bind="visible: supportedLocales().length > 1 , click: toggleLanguageDropDown, event: {keydown: $data.keypressLanguageHandler}, attr: {id: 'CC-header-language-link', href: redirectToLink()}">
+        <span data-bind="text: languageLinkText"></span>
+    </a>
+    <span data-bind="visible: supportedLocales().length == 1, text: languageLinkText"></span>
+</div>
+<div class="content-languages" data-bind="">
+    <ul data-bind="foreach: supportedLocales" role="presentation">
+        <li>
+            <a data-bind="attr: {id: 'CC-header-languagePicker-'+ $index(), href: $parent.redirectToLink()},
+          click: $parent.handleLanguageChange.bind($parent,$data,$parents[5].alternates()), event: {keydown: $parent.keypressLanguageHandler.bind($parent)}">
+                <span data-bind="text: $data.name.toUpperCase() + ' - ' + $data.displayName"></span>
+            </a>
+        </li>
+    </ul>
+</div>
+
+<!-- /ko -->
+<!-- /ko -->
+</script><script type="text/html" id="OCS_preHeader_v1-product-quickview">
+<!-- Quick View Element -->
+<!-- ko if: initialized() && $data.elements.hasOwnProperty('product-quickview') && $data.elements['product-quickview'].quickViewEnabled($parents) -->
+  <div class="quick-view hidden-xs hidden-sm">
+    <p data-bind="click: $data.elements['product-quickview'].handleQuickViewClick.bind($product, $popupId, $parents[1]), 
+	                attr: { title: $product.displayName },
+		              widgetLocaleText: 'quickViewText'" class="cc-product-quickview"></p>
+  </div>
+<!-- /ko -->
+</script><script type="text/html" id="OCS_preHeader_v1-rich-text">
+<!-- ko with: $elementInstance -->
+  <!-- ko if: ($data.hasOwnProperty('config') && $data.id !== 'id') -->
+  <div class="cc-rich-text" data-bind="style: {paddingTop: config.padding.paddingTop + 'px', paddingBottom: config.padding.paddingBottom + 'px', paddingLeft: config.padding.paddingLeft + 'px', paddingRight: config.padding.paddingRight + 'px'}, html: config.richText.content">
+  </div>
+  <!-- /ko -->
+<!-- /ko -->
+
+</script><script type="text/html" id="notifications_v2-add-to-purchase-list">
+<!-- ko if: $data.initialized() && $data.elements.hasOwnProperty('purchase-list') -->
+  <div class="btn-group swm-add-to-wishlist-selector add-space-to-purchase-list">
+    <!-- ko if:$data.quickViewFromPurchaseList !== undefined -->
+      <!-- ko if:!$data.quickViewFromPurchaseList() -->
+        <button id="cc-prodDetailsAddToPurchaseListSelector" data-backdrop="static" data-bind="disabled: {condition: $data.isAddToPurchaseListDisabled && $data.isAddToPurchaseListDisabled()}, widgetLocaleText:'productAddToPurchaseListText'" class="btn cc-button-secondary">
+        </button>
+        <!-- ko if: $data.user().loggedIn() -->
+	    <button id="cc-prodDetailsAddToPurchaseListDropdown" class="btn cc-button-secondary dropdown-toggle" data-backdrop="static" data-toggle="dropdown"
+	     data-bind="disabled: {condition: $data.isAddToPurchaseListDisabled && $data.isAddToPurchaseListDisabled()}, click: $data.elements['purchase-list'].openAddToPurchaseListDropDownSelector.bind($parent),visible:{condition: $data.quickViewFromPurchaseList !== undefined ? !$data.quickViewFromPurchaseList(): true}">
+	     <span class="caret"></span>
+	     <span class="sr-only" data-bind="widgetLocaleText:'productAddToPurchaseListText'"></span>
+	    </button>
+	    <!-- /ko -->
+      <!-- /ko -->
+      <!-- ko if:$data.quickViewFromPurchaseList() -->
+        <button id="cc-prodDetailsAddToPurchaseList" data-backdrop="static" data-dismiss="modal" data-bind="disabled:{condition:!validateAddToCart(),click:$data.elements['purchase-list'].addItemToGivenPurchaseList.bind($data)}, widgetLocaleText:'productAddToPurchaseListText'" class="cc-button-secondary">
+        </button>
+      <!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if:$data.quickViewFromPurchaseList == undefined -->
+      <button id="cc-prodDetailsAddToPurchaseListSelector" data-backdrop="static" data-bind="disabled: {condition: $data.isAddToPurchaseListDisabled && $data.isAddToPurchaseListDisabled()}, widgetLocaleText:'productAddToPurchaseListText'" class="btn cc-button-secondary">
+      </button>
+      <!-- ko if: $data.user().loggedIn() -->
+	  <button id="cc-prodDetailsAddToPurchaseListDropdown" class="btn cc-button-secondary dropdown-toggle" data-backdrop="static" data-toggle="dropdown"
+	    data-bind="disabled: {condition: $data.isAddToPurchaseListDisabled && $data.isAddToPurchaseListDisabled()}, click: $data.elements['purchase-list'].openAddToPurchaseListDropDownSelector.bind($parent),visible:{condition: $data.quickViewFromPurchaseList !== undefined ? !$data.quickViewFromPurchaseList(): true}">
+	    <span class="caret"></span>
+	    <span class="sr-only" data-bind="widgetLocaleText:'productAddToPurchaseListText'"></span>
+	  </button>
+    <!-- /ko -->
+    <!-- /ko -->
+	
+    <!-- ko if: $data.user().loggedIn() -->
+    <ul class="dropdown-menu cc-scrollable-menu" role="menu" aria-labelledby="cc-prodDetailsAddToPurchaseListDropdown">
+      <li role="presentation" class="dropdown-header" data-bind="widgetLocaleText: 'myPurchaseListText'"></li>
+      <!-- ko foreach : {data : $data.elements['purchase-list'].purchaseListArray, as : 'purchaseList'} -->
+       <li role="presentation">
+         <a role="menuitem" tabindex="-1" href="#" data-bind="text: purchaseList.purchaseListName,
+         click: $parent['elements']['purchase-list'].addItemToPurchaseList.bind($parent, purchaseList)"></a>
+       </li>
+      <!-- /ko -->
+      <li role="presentation" class="divider"></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-bind="widgetLocaleText: 'createNewPurchaseListText',
+        click: $parent['elements']['purchase-list'].addToNewPurchaseListClick.bind($parent)"></a></li>
+    </ul>
+    <!-- /ko -->
+  </div>
+<!-- /ko -->
+
+<div class="modal fade" id="CC-newPurchaseList-modal" tabindex="-1" role="alert">
+ <div class="modal-dialog" id="CC-newPurchaseList-modal-dialog">
+    <div class="modal-content" id="CC-newPurchaseListModalContent">
+      <div class="modal-header" id="CC-newPurchaseList-modal-header">
+        <button type="button" class="close" data-dismiss="modal" id="CC-newPurchaseList-modal-headerClose" aria-hidden="true">&times;</button>
+        <h4 data-bind="widgetLocaleText:'newPurchaseListModalTitle'" id="CC-newPurchaseList-modal-headerText"></h4>
+      </div>
+      <hr class="hr-without-margin">
+      <div class="modal-body" id="CC-newPurchaseList-modal-modalBody">
+        <div><span data-bind="widgetLocaleText:'listNameText'"></span></div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <span class="text-danger visible-xs" id="CC-purchaseListName"  role="alert"></span>
+            <div class="control">
+              <input id="CC-purchaseList-name" type="text" class="col-md-12 form-control" data-bind="widgetLocaleText: {attr: 'placeholder', value: 'purchaseListNameText'}"/>
+            </div>
+          </div>
+          <div class="text-danger col-md-4 cc-alert" id="cc-purchaseListName-error" role="alert">
+            <span data-bind="widgetLocaleText:'listNameMandatoryText'">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" id="CC-newPurchaseList-modal-footer">
+        <button class="btn cc-button-secondary" id="CC-newPurchaseList-modal-cancel" data-bind="click: $parent.handleModalNo">
+          <span id="CC-newPurchaseList-modal-discard" data-bind="widgetLocaleText:'purchaseListModalCancel'"></span>
+        </button>
+        <button class="btn cc-button-primary" id="CC-newPurchaseList-modal-submit" data-bind="click: $parent.handleModalYes">
+          <span id="CC-newPurchaseList-modal-save" data-bind="widgetLocaleText:'purchaseListModalCreateList'"></span>
+        </button>
+    </div>
+    </div>
+  </div>
+</div>
+</script><script type="text/html" id="notifications_v2-generic-text">
+<span data-bind="widgetLocaleText:{custom: $elementInstance.textId, value: 'customTextNotFound', attr:'innerText'}"></span>
+
+</script><script type="text/html" id="notifications_v2-image">
+<!-- ko with: $elementInstance -->
+  <!-- ko if: ($data.hasOwnProperty('config') && $data.id !== 'id') -->
+  <div class="cc-image" data-bind="style: {'text-align': config.horizontalAlignment.horizontalAlignment}">
+    <!-- ko if: (config.image.link && config.image.link !== '') -->
+    <a data-bind="attr: {href: config.image.link}">
+      <img data-bind="attr: {src: config.image.src, alt: config.image.altText, title: config.image.titleText}, style: {borderWidth: config.border.borderWidth + 'px', borderColor: config.border.borderColor, borderStyle: 'solid', paddingTop: config.padding.paddingTop + 'px', paddingBottom: config.padding.paddingBottom + 'px', paddingLeft: config.padding.paddingLeft + 'px', paddingRight: config.padding.paddingRight + 'px'}">
+    </a>
+    <!-- /ko -->
+    <!-- ko ifnot: (config.image.link && config.image.link !== '') -->
+      <img data-bind="attr: {src: config.image.src, alt: config.image.altText, title: config.image.titleText}, style: {borderWidth: config.border.borderWidth + 'px', borderColor: config.border.borderColor, borderStyle: 'solid', paddingTop: config.padding.paddingTop + 'px', paddingBottom: config.padding.paddingBottom + 'px', paddingLeft: config.padding.paddingLeft + 'px', paddingRight: config.padding.paddingRight + 'px'}">
+    <!-- /ko -->
+  </div>
+  <!-- /ko -->
+<!-- /ko -->
+
+</script><script type="text/html" id="notifications_v2-notifications-message-box"></script><script type="text/html" id="notifications_v2-product-quickview">
+<!-- Quick View Element -->
+<!-- ko if: initialized() && $data.elements.hasOwnProperty('product-quickview') && $data.elements['product-quickview'].quickViewEnabled($parents) -->
+  <div class="quick-view hidden-xs hidden-sm">
+    <p data-bind="click: $data.elements['product-quickview'].handleQuickViewClick.bind($product, $popupId, $parents[1]), 
+	                attr: { title: $product.displayName },
+		              widgetLocaleText: 'quickViewText'" class="cc-product-quickview"></p>
+  </div>
+<!-- /ko -->
+</script><script type="text/html" id="notifications_v2-rich-text">
+<!-- ko with: $elementInstance -->
+  <!-- ko if: ($data.hasOwnProperty('config') && $data.id !== 'id') -->
+  <div class="cc-rich-text" data-bind="style: {paddingTop: config.padding.paddingTop + 'px', paddingBottom: config.padding.paddingBottom + 'px', paddingLeft: config.padding.paddingLeft + 'px', paddingRight: config.padding.paddingRight + 'px'}, html: config.richText.content">
+  </div>
+  <!-- /ko -->
+<!-- /ko -->
+
+</script><script type="text/html" id="OCS_headerUniandes_v11-add-to-purchase-list">
+<!-- ko if: $data.initialized() && $data.elements.hasOwnProperty('purchase-list') -->
+  <div class="btn-group swm-add-to-wishlist-selector add-space-to-purchase-list">
+    <!-- ko if:$data.quickViewFromPurchaseList !== undefined -->
+      <!-- ko if:!$data.quickViewFromPurchaseList() -->
+        <button id="cc-prodDetailsAddToPurchaseListSelector" data-backdrop="static" data-bind="disabled: {condition: $data.isAddToPurchaseListDisabled && $data.isAddToPurchaseListDisabled()}, widgetLocaleText:'productAddToPurchaseListText'" class="btn cc-button-secondary">
+        </button>
+        <!-- ko if: $data.user().loggedIn() -->
+	    <button id="cc-prodDetailsAddToPurchaseListDropdown" class="btn cc-button-secondary dropdown-toggle" data-backdrop="static" data-toggle="dropdown"
+	     data-bind="disabled: {condition: $data.isAddToPurchaseListDisabled && $data.isAddToPurchaseListDisabled()}, click: $data.elements['purchase-list'].openAddToPurchaseListDropDownSelector.bind($parent),visible:{condition: $data.quickViewFromPurchaseList !== undefined ? !$data.quickViewFromPurchaseList(): true}">
+	     <span class="caret"></span>
+	     <span class="sr-only" data-bind="widgetLocaleText:'productAddToPurchaseListText'"></span>
+	    </button>
+	    <!-- /ko -->
+      <!-- /ko -->
+      <!-- ko if:$data.quickViewFromPurchaseList() -->
+        <button id="cc-prodDetailsAddToPurchaseList" data-backdrop="static" data-dismiss="modal" data-bind="disabled:{condition:!validateAddToCart(),click:$data.elements['purchase-list'].addItemToGivenPurchaseList.bind($data)}, widgetLocaleText:'productAddToPurchaseListText'" class="cc-button-secondary">
+        </button>
+      <!-- /ko -->
+    <!-- /ko -->
+    <!-- ko if:$data.quickViewFromPurchaseList == undefined -->
+      <button id="cc-prodDetailsAddToPurchaseListSelector" data-backdrop="static" data-bind="disabled: {condition: $data.isAddToPurchaseListDisabled && $data.isAddToPurchaseListDisabled()}, widgetLocaleText:'productAddToPurchaseListText'" class="btn cc-button-secondary">
+      </button>
+      <!-- ko if: $data.user().loggedIn() -->
+	  <button id="cc-prodDetailsAddToPurchaseListDropdown" class="btn cc-button-secondary dropdown-toggle" data-backdrop="static" data-toggle="dropdown"
+	    data-bind="disabled: {condition: $data.isAddToPurchaseListDisabled && $data.isAddToPurchaseListDisabled()}, click: $data.elements['purchase-list'].openAddToPurchaseListDropDownSelector.bind($parent),visible:{condition: $data.quickViewFromPurchaseList !== undefined ? !$data.quickViewFromPurchaseList(): true}">
+	    <span class="caret"></span>
+	    <span class="sr-only" data-bind="widgetLocaleText:'productAddToPurchaseListText'"></span>
+	  </button>
+    <!-- /ko -->
+    <!-- /ko -->
+	
+    <!-- ko if: $data.user().loggedIn() -->
+    <ul class="dropdown-menu cc-scrollable-menu" role="menu" aria-labelledby="cc-prodDetailsAddToPurchaseListDropdown">
+      <li role="presentation" class="dropdown-header" data-bind="widgetLocaleText: 'myPurchaseListText'"></li>
+      <!-- ko foreach : {data : $data.elements['purchase-list'].purchaseListArray, as : 'purchaseList'} -->
+       <li role="presentation">
+         <a role="menuitem" tabindex="-1" href="#" data-bind="text: purchaseList.purchaseListName,
+         click: $parent['elements']['purchase-list'].addItemToPurchaseList.bind($parent, purchaseList)"></a>
+       </li>
+      <!-- /ko -->
+      <li role="presentation" class="divider"></li>
+      <li role="presentation"><a role="menuitem" tabindex="-1" href="" data-bind="widgetLocaleText: 'createNewPurchaseListText',
+        click: $parent['elements']['purchase-list'].addToNewPurchaseListClick.bind($parent)"></a></li>
+    </ul>
+    <!-- /ko -->
+  </div>
+<!-- /ko -->
+
+<div class="modal fade" id="CC-newPurchaseList-modal" tabindex="-1" role="alert">
+ <div class="modal-dialog" id="CC-newPurchaseList-modal-dialog">
+    <div class="modal-content" id="CC-newPurchaseListModalContent">
+      <div class="modal-header" id="CC-newPurchaseList-modal-header">
+        <button type="button" class="close" data-dismiss="modal" id="CC-newPurchaseList-modal-headerClose" aria-hidden="true">&times;</button>
+        <h4 data-bind="widgetLocaleText:'newPurchaseListModalTitle'" id="CC-newPurchaseList-modal-headerText"></h4>
+      </div>
+      <hr class="hr-without-margin">
+      <div class="modal-body" id="CC-newPurchaseList-modal-modalBody">
+        <div><span data-bind="widgetLocaleText:'listNameText'"></span></div>
+        <div class="row">
+          <div class="form-group col-md-6">
+            <span class="text-danger visible-xs" id="CC-purchaseListName"  role="alert"></span>
+            <div class="control">
+              <input id="CC-purchaseList-name" type="text" class="col-md-12 form-control" data-bind="widgetLocaleText: {attr: 'placeholder', value: 'purchaseListNameText'}"/>
+            </div>
+          </div>
+          <div class="text-danger col-md-4 cc-alert" id="cc-purchaseListName-error" role="alert">
+            <span data-bind="widgetLocaleText:'listNameMandatoryText'">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer" id="CC-newPurchaseList-modal-footer">
+        <button class="btn cc-button-secondary" id="CC-newPurchaseList-modal-cancel" data-bind="click: $parent.handleModalNo">
+          <span id="CC-newPurchaseList-modal-discard" data-bind="widgetLocaleText:'purchaseListModalCancel'"></span>
+        </button>
+        <button class="btn cc-button-primary" id="CC-newPurchaseList-modal-submit" data-bind="click: $parent.handleModalYes">
+          <span id="CC-newPurchaseList-modal-save" data-bind="widgetLocaleText:'purchaseListModalCreateList'"></span>
+        </button>
+    </div>
+    </div>
+  </div>
+</div>
+</script><script type="text/html" id="OCS_headerUniandes_v11-dropdown-minicart-element">
+<!-- ko if: initialized() && $data.elements.hasOwnProperty('dropdown-minicart-element') -->
+<div class="row">
+  <h2 class="label-hidden" data-bind="widgetLocaleText : 'shoppingCartHeader'"></h2>
+  <div class="col-xs-12 hidden-xs" id="dropdowncart">
+    <div class="pull-right">
+      <h3 class="label-hidden" data-bind="widgetLocaleText : 'cartOperationsText'"></h2>
+      <div class="heading">
+        <span class="glyphicon glyphicon-shopping-cart"></span>
+        <a data-bind="visible: cart().allItems().length > 0 , click: toggleDropDownCart, widgetLocaleText: {attr: 'aria-label', value: 'miniShoppingCartTitle'}, event: {keydown: $data.keypressHandler}" href="#" id="CC-header-cart-total" data-original-title="Shopping Cart" class="cc-cartlink-anchor">
+          <span data-bind="text: cartLinkText"></span>
+        </a>
+        <a data-bind="visible: cart().allItems().length == 0, ccLink: 'cart', widgetLocaleText: {attr: 'aria-label', value: 'miniShoppingCartTitle'}" class="cart" id="CC-header-cart-empty" data-original-title="Shopping Cart" class="cc-cartlink-anchor">
+          <span data-bind="text: cartLinkText"></span>
+        </a>
+      </div>
+    <div class="content" data-bind="visible: cartVisible()">
+      <h4 data-bind="widgetLocaleText : 'cartHeading'"></h4>
+      
+      <!-- ko with: $data['elements']['dropdown-minicart-element'] -->
+      <div class="text-center scroll" data-bind="visible: isTotalRecordsGreater(),
+          css: {scrollDivActive: (currentSection() > 1)}">
+        <a id="CC-headerShoppingCart-scrollUp" class="linkTag" href="#" data-bind="disabled: {condition: (currentSection() == 1),
+          click: $parent.miniCartScrollUp}, inTabFlow: (currentSection() != 1), widgetLocaleText : {value:'miniShoppingCartScrollUp', attr:'aria-label'}">
+          <i data-bind="css: {scrollInactive: (currentSection() == 1)}" id="scrollUpIcon" class="fa fa-caret-up scrollActive" aria-label="Scroll Up"></i>
+        </a>
+      </div>
+
+      <div class="table dropdowncartItems items">
+          <section id="cart-info" data-bind="widgetLocaleText:{value:'minicartText',attr:'summary'}, style: {minHeight: ((currentSection() > 1) ? (dropdowncartItemsHeight()) : ''), height: ((currentSection() > 1) ? (dropdowncartItemsHeight()) : ''), display:'block'}">
+            <div class="row">
+                <h4 class="firstColumn col-sm-3" scope="col" data-bind="widgetLocaleText : 'itemText'"></h4>
+                <h4 class="col-sm-4" scope="col" data-bind="widgetLocaleText : 'itemNameText'"></h4>
+                <h4 class="col-sm-2" scope="col" data-bind="widgetLocaleText: 'quantityText'"></h4>
+                <h4 class="col-sm-2" scope="col" data-bind="widgetLocaleText : 'itemTotalText'"></h4>
+                <h4 class="col-sm-1 sr-only" scope="col" data-bind="widgetLocaleText : 'removeItemText'"></h4>
+            </div>
+            <div class="row item-no-content"></div>
+            <!-- ko foreach: displayedMiniCartItems -->
+              <!-- ko ifnot: ($data.isPlaceHolderItem) -->
+                <div class="row item-style">
+                    <div class="firstColumn col-sm-3 image" data-bind="with: cartItem.productData" role="presentation">
+                        <a data-bind="ccLink : $data, attr: {id: 'CC-header-dropdown-minicart-image-'+id+$parent.catRefId+ $index()}"
+                        onclick="$('#dropdowncart').removeClass('active');">
+                        <img class="imageSize" data-bind="productVariantImageSource:
+                        {src: $data, imageType: 'thumb',
+                        errorSrc: '/img/no-image.jpg',
+                        alt: displayName,
+                        errorAlt: 'Missing Product Image'}">
+                        </a>
+                    </div>
+                    <div data-bind="with: cartItem.productData" class="col-sm-4 name">
+                        <a data-bind="ccLink : $data, attr: {id: 'CC-header-dropdown-minicart-productName-'+id+$parent.catRefId+$index()}"
+                        onclick="$('#dropdowncart').removeClass('active');">
+                        </a>
+                        <div class="optionsText">
+                            <!-- ko foreach: $parent.cartItem.selectedOptions -->
+                                <small>
+                                    <!-- ko if: $data.optionValue -->
+                                        <span class="cc-text-overflow" data-bind="text : $parents[1].cartItem.optionText($index()),
+                                        attr: { id: 'CC-header-cart-productOptions-' + $parents[1].shippingGroupRelationship.productId
+                                            + $parents[1].shippingGroupRelationship.catRefId + $parents[1].cartItem.removeSpaces($data.optionValue)}"></span>
+                                    <!-- /ko -->
+                                </small>
+                            <!-- /ko -->
+                        </div>
+                        <!-- ko if: $parent.shippingGroupRelationship.availabilityDate() !== null && $parent.shippingGroupRelationship.stockState() !== 'IN_STOCK'-->
+                            <span data-bind="widgetLocaleText: 'availabilityDateText'"></span>
+                            <span data-bind="ccDate: {date: $parent.shippingGroupRelationship.availabilityDate}"></span>
+                        <!-- /ko -->
+                    </div>
+                    <div class="col-sm-2">
+                        <span class="sr-only">Quantity: </span><span data-bind="ccNumber: shippingGroupRelationship.quantity" class="qty"></span>
+                    </div>
+                    <div class="col-sm-2">
+                        <span data-bind="currency: {price: shippingGroupRelationship.price(), currencyObj: currency}"></span>
+                    </div>
+                    <div class="col-sm-1 shiftRight">
+                        <a href="#" data-bind="click: cartItem.removeShippingGroupRelationShip.bind(cartItem, shippingGroupRelationship)">
+                            <img class="removeFromCartIcon" src="/img/remove.png" width="16" height="16"
+                            data-bind="widgetLocaleText: {attr: 'alt', value: 'buttonRemoveItem'}"/>
+                        </a>
+                    </div>
+                </div>
+                <!-- ko if: shippingGroupRelationship.isPickupInStore() -->
+                    <div class="row item-no-content">
+                        <div class="col-sm-12" style="position:relative; bottom:0;left:0;">
+                            <strong><span data-bind="widgetLocaleText:'pickupInStoreAtText'"></span><span data-bind="text: shippingGroupRelationship.selectedStore().store.name"></span></strong>
+                        </div>
+                    </div>
+                <!-- /ko -->
+                <!-- ko if: !shippingGroupRelationship.isPickupInStore() -->
+                    <div class="row item-no-content"></div>
+                <!-- /ko -->
+
+              <!-- /ko -->
+
+              <!-- ko if: ($data.isPlaceHolderItem) -->
+                  <div class="row item-style">
+                    <div class="firstColumn col-sm-3" role="presentation">
+                      <i class="fa fa-gift giftIcon" data-bind="attr:{id: 'CC-header-dropdown-minicart-placeHolderImage-'+$index() }"></i>
+                    </div>
+                    <div class="col-sm-5 name">
+                      <span data-bind="text: displayName"></span>
+                    </div>
+                    <div class="col-sm-1">
+                      <span class="sr-only">Quantity: </span></span><span data-bind="ccNumber: quantity" class="qty"></span>
+                    </div>
+                    <div class="col-sm-2">
+                      <span class="sr-only">Cost: </span><span data-bind="currency: {price: itemTotal, currencyObj: $parents[1].cart().currency}"></span>
+                    </div>
+                    <div class="col-sm-1 shiftRight">
+                      <a href="#" data-bind="click: $parents[1].handlePlaceHolderRemove">
+                        <img class="removeFromCartIcon" src="/img/remove.png" width="16" height="16"
+                            data-bind="widgetLocaleText: {attr: 'alt', value: 'buttonRemoveItem'}"/>
+                      </a>
+                    </div>
+                  </div>
+              <!-- /ko -->
+            <!-- /ko -->
+          </section>
+      </div>
+        <div class="text-center scroll" data-bind="visible: isTotalRecordsGreater(),
+            css: {scrollDivActive: (currentSection() < totalSections())}">
+          <a id="CC-headerShoppingCart-scrollDown" class="linkTag" href="#" data-bind="disabled: {condition: (currentSection() == totalSections()),
+            click: $parent.miniCartScrollDown}, inTabFlow: (currentSection() != totalSections()), widgetLocaleText : {value:'miniShoppingCartScrollDown', attr:'aria-label'}">
+            <i data-bind="css: {scrollInactive: (currentSection() == totalSections())}" id="scrollDownIcon" class="fa fa-caret-down scrollActive" aria-label="Scroll Down"></i>
+          </a>
+        </div>
+        <div class="gwpQualifiedMessage text-center" data-bind="visible: gwpQualifiedMessage(), text: gwpQualifiedMessage()"></div>
+      <!-- /ko -->
+        <table class="total" data-bind="widgetLocaleText: {attr: 'summary', value: 'totalTableSummary'}" summary="Shopping cart totals.">
+          <tbody>
+            <tr>
+              <th scope="row" class="right"><b><span data-bind="widgetLocaleText:'totalTableTotal'">Total:</span></b></th>
+              <td class="right"><span data-bind="currency: {price: cart().subTotal(), currencyObj: $data.cart().currency}"></span></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="checkout">
+          <a data-bind="disabled: {condition : cart().allItems().length == 0, link: 'cart'}, click: hideDropDownCart" id="CC-headerShoppingCart-Edit" class="cc-button-primary" role="button">
+            <span data-bind="widgetLocaleText: 'buttonEditCart'">Edit Cart</span>
+          </a>
+          <a data-bind="click: handleDropDownCheckout, ccNavigation: 'prevent', disabled: {condition : cart().allItems().length == 0, link: 'checkout'} ,
+              event: {keydown: $data.keypressHandler}" id="CC-headerShoppingCart-Checkout" class="cc-button-primary" role="button">
+            <span data-bind="widgetLocaleText: 'buttonCheckout'">Checkout</span>
+          </a>
+        </div>
+        <a id="closecart" class="close" data-dismiss="item"
+          onClick="$('#dropdowncart').removeClass('active');">
+          ×
+        </a>
+      </div>
+      <a
+        data-bind="click: handleValidateCart, ccNavigation: 'prevent', disabled: {condition: cart().allItems().length == 0, link : 'checkout'}, inTabFlow: cart().allItems().length != 0, attr: { 'aria-disabled': cart().allItems().length == 0 ? 'true' : 'false'}"
+        id="CC-header-checkout" class="cc-button-primary" role="button">
+        <span id="CC-headerCheckout" data-bind="widgetLocaleText: 'buttonCheckout'"></span>
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-12 visible-xs">
+    <h2 class="label-hidden" data-bind="widgetLocaleText : 'shoppingCartHeader'"></h2>
+    <div class="pull-right cc-cartlink-xs">
+      <span class="glyphicon glyphicon-shopping-cart"></span>
+      <a data-bind="ccLink: 'cart', widgetLocaleText: {attr: 'aria-label', value: 'miniShoppingCartTitle'}" class="cc-cartlink-anchor" data-original-title="Shopping Cart">
+        <span data-bind="text: cartLinkText"></span>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- /ko -->
+</script><script type="text/html" id="OCS_headerUniandes_v11-generic-text">
+<span data-bind="widgetLocaleText:{custom: $elementInstance.textId, value: 'customTextNotFound', attr:'innerText'}"></span>
+
+</script><script type="text/html" id="OCS_headerUniandes_v11-image">
+<!-- ko with: $elementInstance -->
+  <!-- ko if: ($data.hasOwnProperty('config') && $data.id !== 'id') -->
+  <div class="cc-image" data-bind="style: {'text-align': config.horizontalAlignment.horizontalAlignment}">
+    <!-- ko if: (config.image.link && config.image.link !== '') -->
+    <a data-bind="attr: {href: config.image.link}">
+      <img data-bind="attr: {src: config.image.src, alt: config.image.altText, title: config.image.titleText}, style: {borderWidth: config.border.borderWidth + 'px', borderColor: config.border.borderColor, borderStyle: 'solid', paddingTop: config.padding.paddingTop + 'px', paddingBottom: config.padding.paddingBottom + 'px', paddingLeft: config.padding.paddingLeft + 'px', paddingRight: config.padding.paddingRight + 'px'}">
+    </a>
+    <!-- /ko -->
+    <!-- ko ifnot: (config.image.link && config.image.link !== '') -->
+      <img data-bind="attr: {src: config.image.src, alt: config.image.altText, title: config.image.titleText}, style: {borderWidth: config.border.borderWidth + 'px', borderColor: config.border.borderColor, borderStyle: 'solid', paddingTop: config.padding.paddingTop + 'px', paddingBottom: config.padding.paddingBottom + 'px', paddingLeft: config.padding.paddingLeft + 'px', paddingRight: config.padding.paddingRight + 'px'}">
+    <!-- /ko -->
+  </div>
+  <!-- /ko -->
+<!-- /ko -->
+
+</script><script type="text/html" id="OCS_headerUniandes_v11-login-sso-element"></script><script type="text/html" id="OCS_headerUniandes_v11-product-quickview">
+<!-- Quick View Element -->
+<!-- ko if: initialized() && $data.elements.hasOwnProperty('product-quickview') && $data.elements['product-quickview'].quickViewEnabled($parents) -->
+  <div class="quick-view hidden-xs hidden-sm">
+    <p data-bind="click: $data.elements['product-quickview'].handleQuickViewClick.bind($product, $popupId, $parents[1]), 
+	                attr: { title: $product.displayName },
+		              widgetLocaleText: 'quickViewText'" class="cc-product-quickview"></p>
+  </div>
+<!-- /ko -->
+</script><script type="text/html" id="OCS_headerUniandes_v11-rich-text">
+<!-- ko with: $elementInstance -->
+  <!-- ko if: ($data.hasOwnProperty('config') && $data.id !== 'id') -->
+  <div class="cc-rich-text" data-bind="style: {paddingTop: config.padding.paddingTop + 'px', paddingBottom: config.padding.paddingBottom + 'px', paddingLeft: config.padding.paddingLeft + 'px', paddingRight: config.padding.paddingRight + 'px'}, html: config.richText.content">
+  </div>
+  <!-- /ko -->
+<!-- /ko -->
+
+</script><script type="text/html" id="OCS_headerUniandes_v11-search-element">
+<!-- ko if: initialized() && $data.elements.hasOwnProperty('search') -->
+  <form role="form" data-bind="submit: function(data, event) { $data['elements']['search'].handleSearch.bind($data['elements']['search'], $data['elements']['search'], event)() }, event: { keydown : $data['elements']['search'].handleKeyPress }">
+    <!-- ko with: $data['elements']['search'] -->
+      <label for="CC-headerWidget-Search" class="label-hidden" data-bind="widgetLocaleText :'searchLabel'">
+        Search
+      </label>
+      <div class="col-xs-12 pull-right input-group search">
+        <input id="CC-headerWidget-Search" type="text" class="form-control search-query" autocomplete="off"
+          data-bind="widgetLocaleText: {attr: 'placeholder', value: 'searchPlaceholder'}, value: searchText, valueUpdate: 'afterkeydown', onRender:initializeSearch.bind($parent), event: { focus: searchSelected}" />
+        <div class="input-group-btn">
+          <button type="submit" id="searchSubmit" class="btn btn-default form-control" data-bind="event: { keydown : hideSearchDropdown}">
+            <span class="sr-only" data-bind="widgetLocaleText :'searchButtonText'"></span>
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </div>
+      </div>
+    <!-- /ko -->
+  </form>
+<!-- /ko -->
+
+</script></body><loom-container id="lo-engage-ext-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><loom-container id="lo-companion-container"><loom-shadow classname="resolved"></loom-shadow></loom-container><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
