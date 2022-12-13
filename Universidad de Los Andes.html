@@ -617,7 +617,16 @@
     <!-- /ko -->
     <!-- /ko -->
     <!-- /ko -->
-    
+<div class="progress-header">
+  <span>Consulta</span>
+  <h1 class="h1-title">Confirma tu pago</h1>
+  <h2 class="h2-title">Valor $2.162.160</h2>
+      <div class="form-group col-md-12">
+        <button class="btn btn-primary btn-update-data" data-dismiss="modal" data-bind="enable: $data.dateExpIDMask() &amp;&amp; $data.codStudent(), click: handleUpdateProfile">Confirmar</button>
+      </div>
+
+
+    </div>    
     <!-- ko ifnot: global  -->
     <!-- ko if: initialized  -->
     <!-- ko if: $data.elementsSrc --><!-- /ko -->
