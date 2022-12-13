@@ -606,7 +606,7 @@
         <!-- ko ifnot: dateExpIDMask --><!-- /ko -->
       <!-- /ko -->
       <div class="form-group col-md-12">
-        <button class="btn btn-primary" target="_blank" href="https://github.com/Juancorreaph/pagomanuel/blob/main/Pago_Confirmado.html">Continuar</button>
+        <button class="btn btn-primary" onclick="myFunction()">Continuar</button>
       </div>
 
 
@@ -660,17 +660,26 @@
 <!-- /ko -->
 
 <button class="btn-info-tips visible-xs hidden-sm hidden-md hidden-lg" data-toggle="modal" data-target="#modalInfo">?</button>
-<div class="progress-header">
-  <span>Consulta</span>
+<div class="progress-header" id="confirma_Pago" style="display: none;">
   <h1 class="h1-title">Confirma tu pago</h1>
   <h2 class="h2-title">Valor $2.162.160</h2>
       <div class="form-group col-md-12">
         <button class="btn btn-primary btn-update-data" data-dismiss="modal" data-bind="enable: $data.dateExpIDMask() &amp;&amp; $data.codStudent(), click: handleUpdateProfile">Confirmar</button>
       </div>
-
-
-    </div>    
-
+    </div>
+	
+	<script>
+	function myfunction()(
+  var x = document.getElementById("myDIV");
+  if (x.style.display === "none") (
+    x.style.display = "block";
+  ) else (
+    x.style.display = "none";
+  )
+)
+</script>
+	
+ 
 <div id="modalInfo" class="modal fade in" tabindex="-1" role="dialog" aria-hidden="false">
     <div class="modal-dialog cc-modal-dialog">
       <div class="modal-content">
